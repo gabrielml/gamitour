@@ -30,6 +30,10 @@ import com.dawes.pCultural.BorrarPCulturalAccion;
 import com.dawes.pCultural.InsertarPCultural;
 import com.dawes.pCultural.MostrarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalesAccion;
+import com.dawes.pDeportiva.BorrarPDeportivaAccion;
+import com.dawes.pDeportiva.InsertarPDeportiva;
+import com.dawes.pDeportiva.MostrarPDeportivaAccion;
+import com.dawes.pDeportiva.MostrarPDeportivasAccion;
 import com.dawes.parada.BorrarParadaAccion;
 import com.dawes.parada.InsertarParadaAccion;
 import com.dawes.parada.MostrarParadaAccion;
@@ -237,6 +241,20 @@ public abstract class Accion {
 		}
 		if(tipo.equals("BorrarPCultural")){
 			return new BorrarPCulturalAccion();
+		}
+		
+		/*PRUEBA DEPORTIVA*/
+		if(tipo.equals("InsertarPDeportiva")) {
+			return new InsertarPDeportiva();
+		}
+		if(tipo.equals("MostrarPDeportiva")) {
+			return new MostrarPDeportivaAccion();
+		}
+		if(tipo.equals("MostrarPDeportivas")) {
+			return new MostrarPDeportivasAccion();
+		}
+		if(tipo.equals("BorrarPDeportiva")){
+			return new BorrarPDeportivaAccion();
 		}
 				
 		return null;
