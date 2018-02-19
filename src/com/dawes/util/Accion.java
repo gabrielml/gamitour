@@ -26,6 +26,10 @@ import com.dawes.noticia.BorrarNoticiaAccion;
 import com.dawes.noticia.InsertarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiasAccion;
+import com.dawes.parada.BorrarParadaAccion;
+import com.dawes.parada.InsertarParadaAccion;
+import com.dawes.parada.MostrarParadaAccion;
+import com.dawes.parada.MostrarParadasAccion;
 import com.dawes.premio.BorrarPremioAccion;
 import com.dawes.premio.InsertarPremioAccion;
 import com.dawes.premio.MostrarPremioAccion;
@@ -212,6 +216,20 @@ public abstract class Accion {
 		}
 		if(tipo.equals("BorrarPremio")){
 			return new BorrarPremioAccion();
+		}
+		
+		/*PARADA*/
+		if(tipo.equals("InsertarParada")) {
+			return new InsertarParadaAccion();
+		}
+		if(tipo.equals("MostrarParada")) {
+			return new MostrarParadaAccion();
+		}
+		if(tipo.equals("MostrarParadas")) {
+			return new MostrarParadasAccion();
+		}
+		if(tipo.equals("BorrarParada")){
+			return new BorrarParadaAccion();
 		}
 				
 		return null;

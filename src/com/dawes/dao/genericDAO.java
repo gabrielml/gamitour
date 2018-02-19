@@ -46,7 +46,7 @@ public interface genericDAO {
 	public Object getDetalleItinerario(String busqueda);
 	public List<Itinerario> getMostrarItinerarios();
 	
-	public Object getDetalleParada(String busqueda);
+	public Object getDetalleParada(int busqueda);
 	public List<Parada> getMostrarParadas();
 	
 	public Object getDetallePruebaCultural(String busqueda);

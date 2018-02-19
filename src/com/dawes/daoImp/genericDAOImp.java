@@ -167,11 +167,11 @@ public class genericDAOImp implements genericDAO{
 	}
 
 	@Override
-	public Object getDetalleParada(String busqueda) {
+	public Object getDetalleParada(int numeroParada) {
 		// TODO Auto-generated method stub
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT pa FROM Parada pa where numeroParada=:numeroParada");
-		q.setParameter("numeroParada", busqueda);
+		q.setParameter("numeroParada", numeroParada);
 		Parada parada = (Parada) q.getSingleResult();
 		sf.getCurrentSession().getTransaction().commit();										
 		return parada;
@@ -281,7 +281,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Parada> getMostrarParadas() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario_iditinerario) FROM Parada as p");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p");
 		List<Parada> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();										
 		return listado;
@@ -290,7 +290,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebacultural> getMostrarPruebasCultural() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada_idparada) FROM Pruebacultural as pc");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc");
 		List<Pruebacultural> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();										
 		return listado;
@@ -299,7 +299,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebadeportiva> getMostrarPruebasDeportiva() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada_idparada) FROM Pruebadeportiva as pd");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada) FROM Pruebadeportiva as pd");
 		List<Pruebadeportiva> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();										
 		return listado;

@@ -99,7 +99,7 @@ public class ServiceGenericDAOImp implements ServiceGenericDAO{
 	}
 
 	@Override
-	public Object getDetalleParada(String busqueda) {
+	public Object getDetalleParada(int busqueda) {
 		// TODO Auto-generated method stub
 		return g.getDetalleParada(busqueda);
 	}
