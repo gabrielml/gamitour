@@ -11,11 +11,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  <servlet-name>Controller</servlet-name>
-  <servlet-class>com.dawes.util.Controller</servlet-class>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>com.dawes.util.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
- 	<servlet-name>Controller</servlet-name>
- 	<url-pattern>*.do</url-pattern>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>
