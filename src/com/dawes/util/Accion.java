@@ -26,6 +26,10 @@ import com.dawes.noticia.BorrarNoticiaAccion;
 import com.dawes.noticia.InsertarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiasAccion;
+import com.dawes.pCultural.BorrarPCulturalAccion;
+import com.dawes.pCultural.InsertarPCultural;
+import com.dawes.pCultural.MostrarPCulturalAccion;
+import com.dawes.pCultural.MostrarPCulturalesAccion;
 import com.dawes.parada.BorrarParadaAccion;
 import com.dawes.parada.InsertarParadaAccion;
 import com.dawes.parada.MostrarParadaAccion;
@@ -112,23 +116,6 @@ public abstract class Accion {
 		}
 		
 		
-		
-		/*ITINERARIO*/
-		if(tipo.equals("insertarItinerario")){
-			return new InsertarItinerarioAccion();
-		}
-		if(tipo.equals("mostrarItinerario")){
-			return new MostrarItinerarioAccion();
-		}
-		if(tipo.equals("MostrarItinerarios")){
-			return new MostrarItinerariosAccion();
-		}
-		if(tipo.equals("BorrarItinerario")){
-			return new BorrarItinerarioAccion();
-		}
-		
-		
-		
 		/*VOTOS*/
 		if(tipo.equals("insertarVoto")){
 			return new InsertarVotosAccion();
@@ -147,8 +134,6 @@ public abstract class Accion {
 		}
 		
 		
-		
-		
 		/*COMENTARIOS*/
 		if(tipo.equals("insertarComentarios")){
 			return new InsertarComentariosAccion();
@@ -165,9 +150,6 @@ public abstract class Accion {
 		if(tipo.equals("modificarComentarios")){
 			return new ModificarComentariosAccion();
 		}
-		
-		
-		
 		
 		
 		/*MULTIMEDIAS*/
@@ -201,9 +183,6 @@ public abstract class Accion {
 			return new BorrarNoticiaAccion();
 		}
 		
-		
-		
-		
 		/*PREMIO*/
 		if(tipo.equals("insertarpremio")){
 			return new InsertarPremioAccion();
@@ -218,6 +197,20 @@ public abstract class Accion {
 			return new BorrarPremioAccion();
 		}
 		
+		/*ITINERARIO*/
+		if(tipo.equals("insertarItinerario")){
+			return new InsertarItinerarioAccion();
+		}
+		if(tipo.equals("mostrarItinerario")){
+			return new MostrarItinerarioAccion();
+		}
+		if(tipo.equals("MostrarItinerarios")){
+			return new MostrarItinerariosAccion();
+		}
+		if(tipo.equals("BorrarItinerario")){
+			return new BorrarItinerarioAccion();
+		}
+		
 		/*PARADA*/
 		if(tipo.equals("InsertarParada")) {
 			return new InsertarParadaAccion();
@@ -230,6 +223,20 @@ public abstract class Accion {
 		}
 		if(tipo.equals("BorrarParada")){
 			return new BorrarParadaAccion();
+		}
+		
+		/*PRUEBA CULTURAL*/
+		if(tipo.equals("InsertarPCultural")) {
+			return new InsertarPCultural();
+		}
+		if(tipo.equals("MostrarPCultural")) {
+			return new MostrarPCulturalAccion();
+		}
+		if(tipo.equals("MostrarPCulturales")) {
+			return new MostrarPCulturalesAccion();
+		}
+		if(tipo.equals("BorrarPCultural")){
+			return new BorrarPCulturalAccion();
 		}
 				
 		return null;
