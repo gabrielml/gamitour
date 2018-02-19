@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/menuadmin.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Insertar Actividad</title>
+</head>
+
+<body>
+    <div class "cabecera">
+        <div class="logo">
+            <p class="l">Gamitour</p>
+        </div>
+    </div>
+
+    <div class="h1c">
+        <a>Insertar Usuario</a>
+    </div>
+
+    <div class="formulario">
+
+        <form action="insertarUsuarios.do" method="POST">
+
+            <p><a class="f">Nombre:</a><br>
+                <input class="campos" type="text" name="nombre"></p>
+
+            <p><a class="f">Apellidos :</a><br>
+                <input class="campos" type="text" name="apellidos"></p>
+
+            <p><a class="f">Email :</a><br>
+                <input class="campos" type="email" name="email"></p>
+
+            <p><a class="f">Nick:</a><br>
+                <input class="campos" type="text" name="nick"></p>
+
+            <p><a class="f">Contraseña:</a><br>
+                <input class="campos" type="password" name="password"></p>
+
+            <p><a class="f">Fecha de nacimiento (año-mes-dia) :</a><br>
+                <input class="campos" type="text" name="fechaNacimiento"></p>
+
+            <p><a class="f">Telefono :</a><br>
+                <input class="campos" type="text" name="telefono"></p>
+
+            <p><a class="f">Direccion :</a><br>
+                <input class="campos" type="text" name="direccion"></p>
+
+            <p><a class="f">Código Postal :</a><br>
+                <input class="campos" type="text" name="cp"></p>
+            <br>
+            <div id="b_submit">
+                <input class="boton" type="submit" value="Insertar Actividad" name="B1">&nbsp;
+                <input class="boton" type="reset" value="Borrar" name="B2">
+                <div class="volver">
+                    <a class="avolver" href="menuadmin.html">Volver</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
