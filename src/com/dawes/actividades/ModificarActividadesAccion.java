@@ -50,8 +50,12 @@ public class ModificarActividadesAccion extends Accion{
 		}
 		
 		a.setUbicacion(request.getParameter("ubicacionNueva"));
-		a.setNumparticipantes(request.getParameter("numparNuevo"));
-		a.setPrecio(request.getParameter("precioNuevo"));
+		String nCambio = request.getParameter("numparNuevo");
+		Integer numero = Integer.parseInt(nCambio);
+		a.setNumparticipantes(numero);
+		String pCambio = request.getParameter("precioNuevo");
+		Float precio = Float.parseFloat(pCambio);
+		a.setPrecio(precio);
 		a.setImagen(request.getParameter("imagenNueva"));
 	
 		su.update(a);
