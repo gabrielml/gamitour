@@ -7,7 +7,9 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dawes.modelo.Cliente;
 import com.dawes.modelo.Multimedia;
+import com.dawes.modelo.Pruebadeportiva;
 import com.dawes.service.ServiceGenericDAO;
 import com.dawes.serviceImp.ServiceGenericDAOImp;
 import com.dawes.util.Accion;
@@ -22,10 +24,10 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 
 
 	Multimedia m=(Multimedia)su.getDetalleMultimedia(request.getParameter("titulo"));
-		m.setCliente(su.getDetalleCliente(request.getParameter("nombreClienteNuevo")));
-		m.setPruebadeportiva(su.getDetallePruebaDeportiva(request.getParameter("nombrepuebadepNuevo")));
+		m.setCliente((Cliente)su.getDetalleCliente(request.getParameter("nombreClienteNuevo")));
+		m.setPruebadeportiva((Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("nombrepuebadepNuevo")));
 		
-		c.setNick(request.getParameter("nickNuevo"));
+		//c.setNick(request.getParameter("nickNuevo"));
 		Date fecha = null;
 		try {
 			String Fecha = request.getParameter("fechaNueva");
@@ -39,7 +41,10 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 		m.setComentario(request.getParameter("comentarioNuevo"));
 		m.setImagen(request.getParameter("imagenNueva"));
 		m.setVideo(request.getParameter("videoNuevo"));
-		m.setPuntosacumulados("puntosacumuladosNuevo");
+		String pCambio  = request.getParameter("puntosacumuladosNuevo");
+		Integer puntos = Integer.parseInt(pCambio);
+		m.setPuntosacumulados(puntos);
+		
 		m.setTitulo("tituloNuevo");
 		
 		su.update(m);
