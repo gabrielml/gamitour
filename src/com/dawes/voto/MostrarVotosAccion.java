@@ -16,7 +16,7 @@ public class MostrarVotosAccion extends Accion{
 		
 		request.setAttribute("listado", su.getMostrarVotos());
 		
-		return "ConfirmarMostrarVotos.jsp";
+		return "contenido/votos/ConfirmarMostrarVotos.jsp";
 	}
 
 	

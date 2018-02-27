@@ -19,7 +19,7 @@ public class MostrarUsuariosAccion extends Accion{
 		
 		request.setAttribute("listado", su.getMostrarClientes());
 		
-		return "ConfirmarMostrarUsuarios.jsp";
+		return "contenido/usuarios/ConfirmarMostrarUsuarios.jsp";
 	}
 
 

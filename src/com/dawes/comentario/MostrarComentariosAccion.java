@@ -18,7 +18,7 @@ public class MostrarComentariosAccion extends Accion{
 		request.setAttribute("listado", su.getMostrarComentarios());
 		
 		
-		return "ConfirmarMostrarComentarios.jsp";
+		return "contenido/comentarios/ConfirmarMostrarComentarios.jsp";
 	}
 
 }

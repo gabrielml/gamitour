@@ -23,7 +23,7 @@ public class MostrarActividadesAccion  extends Accion{
 		
 		//return "actividades/ConfirmarMostrarActividades.jsp";
 	
-		return "ConfirmarMostrarActividades.jsp";
+		return "contenido/actividades/ConfirmarMostrarActividades.jsp";
 	}
 
 }

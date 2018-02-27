@@ -53,7 +53,7 @@ public class MostrarPDeportivaAccion extends Accion{
 		request.setAttribute("puntos", puntos);
 			
 	
-		return "ConfirmarBuscarPDeportiva.jsp";
+		return "contenido/pDeportivas/ConfirmarBuscarPDeportiva.jsp";
 		
 	}
 

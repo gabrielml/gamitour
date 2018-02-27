@@ -19,7 +19,7 @@ public class MostrarPDeportivasAccion extends Accion{
 		System.out.println(su.getMostrarParadas());
 		
 		
-		return "ConfirmarMostrarPDeportivas.jsp";
+		return "contenido/pDeportivas/ConfirmarMostrarPDeportivas.jsp";
 	}
 
 }

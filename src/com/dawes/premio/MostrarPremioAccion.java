@@ -7,7 +7,6 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dawes.modelo.Cliente;
 import com.dawes.modelo.Premio;
 import com.dawes.service.ServiceGenericDAO;
 import com.dawes.serviceImp.ServiceGenericDAOImp;
@@ -52,7 +51,7 @@ public class MostrarPremioAccion extends Accion{
 		Integer puntos = premio.getPuntos();
 		request.setAttribute("puntos", puntos);
 		
-		return "ConfirmarBuscarPremio.jsp";
+		return "contenido/premios/ConfirmarBuscarPremio.jsp";
 	}
 
 }

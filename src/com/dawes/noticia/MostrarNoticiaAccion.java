@@ -45,7 +45,7 @@ public class MostrarNoticiaAccion extends Accion {
 		String imagen = noticia.getImagen();
 		request.setAttribute("imagen", imagen);
 		
-		return "ConfirmarBuscarNoticia.jsp";
+		return "contenido/noticias/ConfirmarBuscarNoticia.jsp";
 	}
 
 }

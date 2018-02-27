@@ -66,7 +66,7 @@ public class MostrarActividadAccion extends Accion{
 		
 		
 		//return "actividades/ConfirmarBuscarActividad.jsp";
-		return "ConfirmarBuscarActividad.jsp";
+		return "contenido/actividades/ConfirmarBuscarActividad.jsp";
 	}
 
 }

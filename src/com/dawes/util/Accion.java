@@ -67,46 +67,11 @@ public abstract class Accion {
 	//clase -->seleccion por el cliente.
 	public static Accion getAccion(String tipo){
 		
-		/*USUARIOS*/
-		
-		if(tipo.equals("insertarUsuarios")){
-			return new InsertarUsuariosAccion();
-		}
-		if(tipo.equals("MostrarUsuarios")){
-			return new MostrarUsuariosAccion();
-		}
-		if(tipo.equals("mostrarUsuario")){
-			return new MostrarUsuarioAccion();
-		}
-		if(tipo.equals("BorrarUsuario")){
-			return new BorrarUsuarioAccion();
-		}
-		if(tipo.equals("modificarUsuarios")){
-			return new ModificarUsuariosAccion();
-		}
-		
-		
-		/*ROLES*/
-		if(tipo.equals("insertarRol")){
-			return new InsertarRolAccion();
-		}
-		if(tipo.equals("mostrarRol")){
-			return new MostrarRolAccion();
-		}
-		if(tipo.equals("MostrarRoles")){
-			return new MostrarRolesAccion();
-		}
-		if(tipo.equals("BorrarRol")){
-			return new BorrarRolAccion();
-		}
-		
-		
-		
 		/*ACTIVIDADES*/
-		if(tipo.equals("insertarActividades")){
+		if(tipo.equals("InsertarActividades")){
 			return new InsertarActividadAccion();
 		}
-		if(tipo.equals("mostrarActividad")){
+		if(tipo.equals("MostrarActividad")){
 			return new MostrarActividadAccion();
 		}
 		if(tipo.equals("MostrarActividades")){
@@ -115,34 +80,15 @@ public abstract class Accion {
 		if(tipo.equals("BorrarActividad")){
 			return new BorrarActividadesAccion();
 		}
-		if(tipo.equals("modificarActividades")){
+		if(tipo.equals("ModificarActividades")){
 			return new ModificarActividadesAccion();
 		}
 		
-		
-		/*VOTOS*/
-		if(tipo.equals("insertarVoto")){
-			return new InsertarVotosAccion();
-		}
-		if(tipo.equals("mostrarVoto")){
-			return new MostrarVotoAccion();
-		}
-		if(tipo.equals("MostrarVotos")){
-			return new MostrarVotosAccion();
-		}
-		if(tipo.equals("BorrarVoto")){
-			return new BorrarVotoAccion();
-		}
-		if(tipo.equals("modificarVotos")){
-			return new ModificarVotosAccion();
-		}
-		
-		
 		/*COMENTARIOS*/
-		if(tipo.equals("insertarComentarios")){
+		if(tipo.equals("InsertarComentarios")){
 			return new InsertarComentariosAccion();
 		}
-		if(tipo.equals("mostrarComentario")){
+		if(tipo.equals("MostrarComentario")){
 			return new MostrarComentarioAccion();
 		}
 		if(tipo.equals("MostrarComentarios")){
@@ -151,61 +97,15 @@ public abstract class Accion {
 		if(tipo.equals("BorrarComentario")){
 			return new BorrarComentarioAccion();
 		}
-		if(tipo.equals("modificarComentarios")){
+		if(tipo.equals("ModificarComentarios")){
 			return new ModificarComentariosAccion();
 		}
 		
-		
-		/*MULTIMEDIAS*/
-		if(tipo.equals("insertarMultimedias")){
-			return new InsertarMultimediasAccion();
-		}
-		if(tipo.equals("mostrarMultimedia")){
-			return new MostrarMultimediaAccion();
-		}
-		if(tipo.equals("MostrarMultimedias")){
-			return new MostrarMultimediasAccion();
-		}
-		if(tipo.equals("BorrarMultimedia")){
-			return new BorrarMultimediaAccion();
-		}
-		if(tipo.equals("modificarMultimedias")){
-			return new ModificarMultimediasAccion();
-		}
-
-		/*NOTICIAS*/
-		if(tipo.equals("insertarNoticia")){
-			return new InsertarNoticiaAccion();
-		}
-		if(tipo.equals("mostrarnoticia")){
-			return new MostrarNoticiaAccion();
-		}
-		if(tipo.equals("MostrarNoticias")){
-			return new MostrarNoticiasAccion();
-		}
-		if(tipo.equals("BorrarNoticia")){
-			return new BorrarNoticiaAccion();
-		}
-		
-		/*PREMIO*/
-		if(tipo.equals("insertarpremio")){
-			return new InsertarPremioAccion();
-		}
-		if(tipo.equals("mostrarpremio")){
-			return new MostrarPremioAccion();
-		}
-		if(tipo.equals("MostrarPremios")){
-			return new MostrarPremiosAccion();
-		}
-		if(tipo.equals("BorrarPremio")){
-			return new BorrarPremioAccion();
-		}
-		
-		/*ITINERARIO*/
-		if(tipo.equals("insertarItinerario")){
+		/*ITINERARIOS*/
+		if(tipo.equals("InsertarItinerario")){
 			return new InsertarItinerarioAccion();
 		}
-		if(tipo.equals("mostrarItinerario")){
+		if(tipo.equals("MostrarItinerario")){
 			return new MostrarItinerarioAccion();
 		}
 		if(tipo.equals("MostrarItinerarios")){
@@ -215,7 +115,38 @@ public abstract class Accion {
 			return new BorrarItinerarioAccion();
 		}
 		
-		/*PARADA*/
+		/*MULTIMEDIAS*/
+		if(tipo.equals("InsertarMultimedias")){
+			return new InsertarMultimediasAccion();
+		}
+		if(tipo.equals("MostrarMultimedia")){
+			return new MostrarMultimediaAccion();
+		}
+		if(tipo.equals("MostrarMultimedias")){
+			return new MostrarMultimediasAccion();
+		}
+		if(tipo.equals("BorrarMultimedia")){
+			return new BorrarMultimediaAccion();
+		}
+		if(tipo.equals("ModificarMultimedias")){
+			return new ModificarMultimediasAccion();
+		}
+		
+		/*NOTICIAS*/
+		if(tipo.equals("InsertarNoticia")){
+			return new InsertarNoticiaAccion();
+		}
+		if(tipo.equals("MostrarNoticia")){
+			return new MostrarNoticiaAccion();
+		}
+		if(tipo.equals("MostrarNoticias")){
+			return new MostrarNoticiasAccion();
+		}
+		if(tipo.equals("BorrarNoticia")){
+			return new BorrarNoticiaAccion();
+		}
+		
+		/*PARADAS*/
 		if(tipo.equals("InsertarParada")) {
 			return new InsertarParadaAccion();
 		}
@@ -229,7 +160,7 @@ public abstract class Accion {
 			return new BorrarParadaAccion();
 		}
 		
-		/*PRUEBA CULTURAL*/
+		/*PRUEBAS CULTURALES*/
 		if(tipo.equals("InsertarPCultural")) {
 			return new InsertarPCultural();
 		}
@@ -243,7 +174,7 @@ public abstract class Accion {
 			return new BorrarPCulturalAccion();
 		}
 		
-		/*PRUEBA DEPORTIVA*/
+		/*PRUEBAS DEPORTIVAS*/
 		if(tipo.equals("InsertarPDeportiva")) {
 			return new InsertarPDeportiva();
 		}
@@ -256,9 +187,69 @@ public abstract class Accion {
 		if(tipo.equals("BorrarPDeportiva")){
 			return new BorrarPDeportivaAccion();
 		}
+		
+		/*PREMIOS*/
+		if(tipo.equals("InsertarPremio")){
+			return new InsertarPremioAccion();
+		}
+		if(tipo.equals("MostrarPremio")){
+			return new MostrarPremioAccion();
+		}
+		if(tipo.equals("MostrarPremios")){
+			return new MostrarPremiosAccion();
+		}
+		if(tipo.equals("BorrarPremio")){
+			return new BorrarPremioAccion();
+		}
+		
+		/*ROLES*/
+		if(tipo.equals("InsertarRol")){
+			return new InsertarRolAccion();
+		}
+		if(tipo.equals("MostrarRol")){
+			return new MostrarRolAccion();
+		}
+		if(tipo.equals("MostrarRoles")){
+			return new MostrarRolesAccion();
+		}
+		if(tipo.equals("BorrarRol")){
+			return new BorrarRolAccion();
+		}
+		
+		/*USUARIOS*/
+		if(tipo.equals("InsertarUsuarios")){
+			return new InsertarUsuariosAccion();
+		}
+		if(tipo.equals("MostrarUsuarios")){
+			return new MostrarUsuariosAccion();
+		}
+		if(tipo.equals("MostrarUsuario")){
+			return new MostrarUsuarioAccion();
+		}
+		if(tipo.equals("BorrarUsuario")){
+			return new BorrarUsuarioAccion();
+		}
+		if(tipo.equals("ModificarUsuarios")){
+			return new ModificarUsuariosAccion();
+		}
+		
+		/*VOTOS*/
+		if(tipo.equals("InsertarVoto")){
+			return new InsertarVotosAccion();
+		}
+		if(tipo.equals("MostrarVoto")){
+			return new MostrarVotoAccion();
+		}
+		if(tipo.equals("MostrarVotos")){
+			return new MostrarVotosAccion();
+		}
+		if(tipo.equals("BorrarVoto")){
+			return new BorrarVotoAccion();
+		}
+		if(tipo.equals("ModificarVotos")){
+			return new ModificarVotosAccion();
+		}
 				
 		return null;
 	}
-	
-	
 }

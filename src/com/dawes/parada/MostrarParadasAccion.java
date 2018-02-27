@@ -19,7 +19,7 @@ public class MostrarParadasAccion extends Accion{
 		System.out.println(su.getMostrarParadas());
 		
 		
-		return "ConfirmarMostrarParadas.jsp";
+		return "contenido/paradas/ConfirmarMostrarParadas.jsp";
 	}
 
 }

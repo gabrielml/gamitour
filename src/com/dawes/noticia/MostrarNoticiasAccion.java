@@ -17,7 +17,7 @@ public class MostrarNoticiasAccion extends Accion{
 
 		request.setAttribute("listado", su.getMostrarNoticias());
 		
-		return "ConfirmarMostrarNoticias.jsp";
+		return "contenido/noticias/ConfirmarMostrarNoticias.jsp";
 		
 		
 	}

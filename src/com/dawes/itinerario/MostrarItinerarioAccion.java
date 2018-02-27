@@ -43,7 +43,7 @@ public class MostrarItinerarioAccion extends Accion{
 		request.setAttribute("paradas",paradas);
 		
 		
-		return "ConfirmarBuscarItinerario.jsp";
+		return "contenido/itinerarios/ConfirmarBuscarItinerario.jsp";
 	}
 
 }

@@ -31,7 +31,7 @@ public class MostrarVotoAccion extends Accion{
 		request.setAttribute("puntos", puntos);
 		
 		
-		return "ConfirmarBuscarVoto.jsp";
+		return "contenido/votos/ConfirmarBuscarVoto.jsp";
 	}
 
 }

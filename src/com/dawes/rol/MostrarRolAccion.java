@@ -31,7 +31,7 @@ public class MostrarRolAccion extends Accion{
 		
 		
 		
-		return "ConfirmarBuscarRol.jsp";
+		return "contenido/roles/ConfirmarBuscarRol.jsp";
 	
 
 	}

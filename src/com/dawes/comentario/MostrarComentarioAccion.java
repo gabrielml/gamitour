@@ -35,7 +35,7 @@ public class MostrarComentarioAccion extends Accion{
 		String multimedia = comentario.getMultimedia().getTitulo();
 		request.setAttribute("multimedia", multimedia);
 		
-		return "ConfirmarBuscarComentario.jsp";
+		return "contenido/comentarios/ConfirmarBuscarComentario.jsp";
 	}
 
 }

@@ -18,7 +18,7 @@ public class MostrarPremiosAccion extends Accion{
 
 		request.setAttribute("listado", su.getMostrarPremios());
 		
-		return "ConfirmarMostrarPremios.jsp";
+		return "contenido/premios/ConfirmarMostrarPremios.jsp";
 	
 
 	}

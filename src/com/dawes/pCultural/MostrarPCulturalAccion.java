@@ -48,7 +48,7 @@ public class MostrarPCulturalAccion extends Accion{
 		request.setAttribute("puntos", puntos);
 			
 	
-		return "ConfirmarBuscarPCultural.jsp";
+		return "contenido/pCulturales/ConfirmarBuscarPCultural.jsp";
 		
 	}
 

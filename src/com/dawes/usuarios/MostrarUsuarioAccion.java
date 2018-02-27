@@ -55,7 +55,7 @@ public class MostrarUsuarioAccion extends Accion{
 		request.setAttribute("multimedias",multimedias );
 		
 		
-		return "ConfirmarBuscarUsuario.jsp";
+		return "contenido/usuarios/ConfirmarBuscarUsuario.jsp";
 	}
 
 }

@@ -19,7 +19,7 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 
 		request.setAttribute("listado", su.getMostrarRoles());
 		
-		return "ConfirmarMostrarRoles.jsp";
+		return "contenido/roles/ConfirmarMostrarRoles.jsp";
 	}
 
 }

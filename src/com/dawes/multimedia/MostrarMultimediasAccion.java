@@ -18,7 +18,7 @@ public class MostrarMultimediasAccion extends Accion{
 		request.setAttribute("listado", su.getMostrarMultimedias());
 		
 		
-		return "ConfirmarMostrarMultimedias.jsp";
+		return "contenido/multimedias/ConfirmarMostrarMultimedias.jsp";
 	}
 
 }

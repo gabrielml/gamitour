@@ -64,7 +64,7 @@ public class MostrarParadaAccion extends Accion{
 		request.setAttribute("pDeportivas", pDeportivas);
 		
 	
-		return "ConfirmarBuscarParada.jsp";
+		return "contenido/paradas/ConfirmarBuscarParada.jsp";
 		
 	}
 

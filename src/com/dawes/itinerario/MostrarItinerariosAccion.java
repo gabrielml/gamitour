@@ -18,7 +18,7 @@ public class MostrarItinerariosAccion extends Accion {
 		request.setAttribute("listado", su.getMostrarItinerarios());
 		
 		
-		return "ConfirmarMostrarItinerarios.jsp";
+		return "contenido/itinerarios/ConfirmarMostrarItinerarios.jsp";
 	}
 
 }

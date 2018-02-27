@@ -18,7 +18,7 @@ public class MostrarPCulturalesAccion extends Accion{
 		request.setAttribute("listado", su.getMostrarPruebasCultural());
 		
 		
-		return "ConfirmarMostrarPCulturales.jsp";
+		return "contenido/pCulturales/ConfirmarMostrarPCulturales.jsp";
 	}
 
 }

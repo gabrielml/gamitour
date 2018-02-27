@@ -63,7 +63,7 @@ public class MostrarMultimediaAccion extends Accion{
 		
 		
 		
-		return "ConfirmarBuscarMultimedia.jsp";
+		return "contenido/multimedias/ConfirmarBuscarMultimedia.jsp";
 	}
 
 }
