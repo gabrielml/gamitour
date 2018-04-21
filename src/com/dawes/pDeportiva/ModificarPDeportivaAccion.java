@@ -1,4 +1,4 @@
-package com.dawes.actividades;
+package com.dawes.pDeportiva;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,29 +7,30 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dawes.modelo.Actividad;
-import com.dawes.modelo.Cliente;
+import com.dawes.modelo.Parada;
+import com.dawes.modelo.Pruebacultural;
+import com.dawes.modelo.Pruebadeportiva;
 import com.dawes.service.ServiceGenericDAO;
 import com.dawes.serviceImp.ServiceGenericDAOImp;
 import com.dawes.util.Accion;
 
-public class ModificarActividadesAccion extends Accion{
+public class ModificarPDeportivaAccion extends Accion {
 
 	@Override
 	public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
-
-		ServiceGenericDAO su = new ServiceGenericDAOImp();
-
-		Actividad a=(Actividad)su.getDetalleActividad(request.getParameter("nombre"));		
-		a.setNombre(request.getParameter("nombreNuevoA"));
+		// TODO Auto-generated method stub
+		ServiceGenericDAO service = new ServiceGenericDAOImp();
+		Pruebadeportiva pdeportiva = (Pruebadeportiva)service.getDetallePruebaDeportiva(request.getParameter("nombre"));
+		
+		pdeportiva.setNombre(request.getParameter("nombreNuevo"));
 		
 		Date fecha = null;
 		try {
-			String fechaInicio = request.getParameter("fechaNueva");
+			String fechaInicio = request.getParameter("fechainicioNueva");
 			SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
 			String strFecha = fechaInicio;
 			fecha = formatoDelTexto.parse(strFecha);
-			a.setFechainicio(fecha);
+			pdeportiva.setFechainicio(fecha);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,32 +38,24 @@ public class ModificarActividadesAccion extends Accion{
 
 		Date fechaFin = null;
 		try {
-			String fechaFinal = request.getParameter("fechaFinNueva");
+			String fechaFinal = request.getParameter("fechafinNueva");
 			SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
 			String strFecha = fechaFinal;
 			fechaFin = formatoDelTexto.parse(strFecha);
-			a.setFechafin(fechaFin);
+			pdeportiva.setFechafin(fechaFin);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		a.setUbicacion(request.getParameter("ubicacionNueva"));
-		String nCambio = request.getParameter("numparNuevo");
-		Integer numero = Integer.parseInt(nCambio);
-		a.setNumparticipantes(numero);
-		String pCambio = request.getParameter("precioNuevo");
-		Float precio = Float.parseFloat(pCambio);
-		a.setPrecio(precio);
-		a.setImagen(request.getParameter("imagenNueva"));
+		pdeportiva.setExplicacion(request.getParameter("explicacionNueva"));
 		
-		su.update(a);
-		//request.setAttribute("listaUsuarios", su.getUsuarios());
+		String recepcion = request.getParameter("puntosNuevos");
+		int puntosNuevos = Integer.parseInt(recepcion);
+		pdeportiva.setPuntos(puntosNuevos);
+
+		service.update(pdeportiva);
 
 		return "index.html";
-		
-	
-		
 	}
-
 }

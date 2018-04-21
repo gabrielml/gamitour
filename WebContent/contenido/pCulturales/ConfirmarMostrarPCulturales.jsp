@@ -29,6 +29,7 @@
 		<td>${unaPCultural[4]}</td>
 		<td>${unaPCultural[5]}</td>
 		<td><a href="BorrarPCultural.do?nombrePCulturalBorrar=${unaPCultural[1]}">Borrar</a></td>
+		<td><a href="contenido/pCulturales/ModificarPCultural.jsp?idpruebacultural=${unaPCultural[0]}&nombre=${unaPCultural[1]}&pregunta=${unaPCultural[2]}&respuesta=${unaPCultural[3]}&puntos=${unaPCultural[4]}&parada=${unaPCultural[5]}">Modificar</a></td>
 	</tr>
 </c:forEach>
 </table>

@@ -35,14 +35,14 @@
 		<td>${unaActividad[7]}</td>
 		<td>${unaActividad[8]}</td>
 		<td><a href="BorrarActividad.do?idBorrar=${unaActividad[1]}">Borrar</a></td>
-				<td><a href="ModificarActividades.jsp?idactividad=${unaActividad[0]}&nombre=${unaActividad[1]}&fechaInicio=${unaActividad[2]}&fechaFin=${unaActividad[3]}&ubicacion=${unaActividad[4]}&numParticipantes=${unaActividad[5]}&precio=${unaActividad[6]}&imagen=${unaActividad[7]}&puntos=${unaActividad[8]}">Modificar</a></td>
+				<td><a href="contenido/actividades/ModificarActividades.jsp?idactividad=${unaActividad[0]}&nombre=${unaActividad[1]}&fechaInicio=${unaActividad[2]}&fechaFin=${unaActividad[3]}&ubicacion=${unaActividad[4]}&numParticipantes=${unaActividad[5]}&precio=${unaActividad[6]}&imagen=${unaActividad[7]}&puntos=${unaActividad[8]}">Modificar</a></td>
 		
 	</tr>
 </c:forEach>
 </table>
 
 <a href="/Demo_Web/index.html">Volver al index</a>
-
+	
 
 
 </body>

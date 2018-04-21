@@ -25,6 +25,7 @@
 		<td>${unItinerario[3]}</td>
 		<td>${unItinerario[4]}</td>
 		<td><a href="BorrarItinerario.do?idBorrar=${unItinerario[1]}">Borrar</a></td>
+		<td><a href="contenido/itinerarios/ModificarItinerarios.jsp?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}&categoria=${unItinerario[2]}&duracion=${unItinerario[3]}&ubicacion=${unItinerario[4]}">Modificar</a>
 		
 	</tr>
 </c:forEach>

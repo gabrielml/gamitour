@@ -15,6 +15,7 @@ import com.dawes.comentario.MostrarComentarioAccion;
 import com.dawes.comentario.MostrarComentariosAccion;
 import com.dawes.itinerario.BorrarItinerarioAccion;
 import com.dawes.itinerario.InsertarItinerarioAccion;
+import com.dawes.itinerario.ModificarItinerariosAccion;
 import com.dawes.itinerario.MostrarItinerarioAccion;
 import com.dawes.itinerario.MostrarItinerariosAccion;
 import com.dawes.multimedia.BorrarMultimediaAccion;
@@ -28,14 +29,17 @@ import com.dawes.noticia.MostrarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiasAccion;
 import com.dawes.pCultural.BorrarPCulturalAccion;
 import com.dawes.pCultural.InsertarPCultural;
+import com.dawes.pCultural.ModificarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalesAccion;
 import com.dawes.pDeportiva.BorrarPDeportivaAccion;
 import com.dawes.pDeportiva.InsertarPDeportiva;
+import com.dawes.pDeportiva.ModificarPDeportivaAccion;
 import com.dawes.pDeportiva.MostrarPDeportivaAccion;
 import com.dawes.pDeportiva.MostrarPDeportivasAccion;
 import com.dawes.parada.BorrarParadaAccion;
 import com.dawes.parada.InsertarParadaAccion;
+import com.dawes.parada.ModificarParadasAccion;
 import com.dawes.parada.MostrarParadaAccion;
 import com.dawes.parada.MostrarParadasAccion;
 import com.dawes.premio.BorrarPremioAccion;
@@ -114,6 +118,9 @@ public abstract class Accion {
 		if(tipo.equals("BorrarItinerario")){
 			return new BorrarItinerarioAccion();
 		}
+		if(tipo.equals("ModificarItinerarios")){
+			return new ModificarItinerariosAccion();
+		}
 		
 		/*MULTIMEDIAS*/
 		if(tipo.equals("InsertarMultimedias")){
@@ -159,6 +166,9 @@ public abstract class Accion {
 		if(tipo.equals("BorrarParada")){
 			return new BorrarParadaAccion();
 		}
+		if(tipo.equals("ModificarParadas")){
+			return new ModificarParadasAccion();
+		}
 		
 		/*PRUEBAS CULTURALES*/
 		if(tipo.equals("InsertarPCultural")) {
@@ -173,6 +183,9 @@ public abstract class Accion {
 		if(tipo.equals("BorrarPCultural")){
 			return new BorrarPCulturalAccion();
 		}
+		if(tipo.equals("ModificarPCultural")){
+			return new ModificarPCulturalAccion();
+		}
 		
 		/*PRUEBAS DEPORTIVAS*/
 		if(tipo.equals("InsertarPDeportiva")) {
@@ -186,6 +199,9 @@ public abstract class Accion {
 		}
 		if(tipo.equals("BorrarPDeportiva")){
 			return new BorrarPDeportivaAccion();
+		}
+		if(tipo.equals("ModificarPDeportiva")){
+			return new ModificarPDeportivaAccion();
 		}
 		
 		/*PREMIOS*/

@@ -13,7 +13,8 @@
 
 <table>
 
-<input type="hidden" name="idactividad"/>
+<input type="hidden" name="idactividad" value="<%=request.getParameter("idactividad")%>"/>
+<input type="hidden" name="nombre" value="<%=request.getParameter("nombre")%>"/>
 <tr><td>Nombre : </td><td><input type="text" value="<%=request.getParameter("nombre")  %>" name="nombreNuevoA"></td></tr>
 <tr><td>Fecha Inicio : </td><td><input type="text" value="<%=request.getParameter("fechaInicio")  %>" name="fechaNueva"></td></tr>
 <tr><td>Fecha fin : </td><td><input type="text" value="<%=request.getParameter("fechaFin")  %>" name="fechaFinNueva"></td></tr>

@@ -150,6 +150,7 @@ public class genericDAOImp implements genericDAO{
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT a FROM Actividad a where nombre=:nombre");
 		q.setParameter("nombre", busqueda);
+		System.out.println("EL NOMBRE ES: " + busqueda);
 		Actividad actividad = (Actividad) q.getSingleResult();
 		sf.getCurrentSession().getTransaction().commit();										
 		return actividad;
@@ -173,7 +174,8 @@ public class genericDAOImp implements genericDAO{
 		Query q = sf.getCurrentSession().createQuery("SELECT pa FROM Parada pa where numeroParada=:numeroParada");
 		q.setParameter("numeroParada", numeroParada);
 		Parada parada = (Parada) q.getSingleResult();
-		sf.getCurrentSession().getTransaction().commit();										
+		sf.getCurrentSession().getTransaction().commit();
+		sf.getCurrentSession().close();
 		return parada;
 	}
 
@@ -265,7 +267,8 @@ public class genericDAOImp implements genericDAO{
 		Query q = sf.getCurrentSession().createQuery("SELECT new list(a.idactividad,a.nombre,a.fechainicio,a.fechafin,a.ubicacion,a.numparticipantes,a.precio,a.imagen,a.puntos) FROM Actividad as a");
 		List<Actividad> listado= q.list();
 		
-		sf.getCurrentSession().getTransaction().commit();										
+		sf.getCurrentSession().getTransaction().commit();	
+		sf.getCurrentSession().close();
 		return listado;
 	}
 

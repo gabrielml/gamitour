@@ -30,9 +30,8 @@
 		<td>${unaPDeportiva[4]}</td>
 		<td>${unaPDeportiva[5]}</td>
 		<td>${unaPDeportiva[6]}</td>
-		<td>${unaPDeportiva[7]}</td>
-		<td>${unaPDeportiva[8]}</td>
 		<td><a href="BorrarPDeportiva.do?nombrePDeportivaBorrar=${unaPDeportiva[1]}">Borrar</a></td>
+		<td><a href="contenido/pDeportivas/ModificarPDeportiva.jsp?idpruebadeportiva=${unaPDeportiva[0]}&nombre=${unaPDeportiva[1]}&fechainicio=${unaPDeportiva[2]}&fechafin=${unaPDeportiva[3]}&explicacion=${unaPDeportiva[4]}&puntos=${unaPDeportiva[5]}&parada=${unaPDeportiva[6]}">Modificar</a></td>
 	</tr>
 </c:forEach>
 </table>

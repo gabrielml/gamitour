@@ -34,7 +34,7 @@
 		<td>${unaParada[7]}</td>
 		<td>${unaParada[8]}</td>
 		<td><a href="BorrarParada.do?numParadaBorrar=${unaParada[2]}">Borrar</a></td>
-		
+		<td><a href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada[0]}&nombre=${unaParada[1]}&numeroParada=${unaParada[2]}&ubicacion=${unaParada[3]}&historia=${unaParada[4]}&anecdotario=${unaParada[5]}&gastronomia=${unaParada[6]}&imagen=${unaParada[7]}&itinerario=${unaParada[8]}">Modificar</a></td>
 	</tr>
 </c:forEach>
 </table>
