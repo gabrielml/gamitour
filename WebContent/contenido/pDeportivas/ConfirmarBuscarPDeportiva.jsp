@@ -19,6 +19,8 @@
 	<tr><td>Fecha de fin : <%= request.getAttribute("fechafin") %></td></tr>
 	<tr><td>Explicacion : <%= request.getAttribute("explicacion") %></td></tr>
 	<tr><td>Puntos : <%= request.getAttribute("puntos") %></td></tr>
+	<tr><td>Puntos : <%= request.getAttribute("pdf") %></td></tr>
+	<tr><td>Puntos : <%= request.getAttribute("video") %></td></tr>
 </table>
 
 

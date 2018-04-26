@@ -4,25 +4,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Actividades</title>
-</head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="jquery/js.js"></script>
+<link href="css/mostrar.css" rel="stylesheet">
+
+
+</head>
 <body>
 
-<h1>Actividades : </h1>
 
-<table><tr>
-<tr><td>ID</td>
-<td>NOMBRE </td>
-<td>FECHA INICIO</td>
-<td>FECHA FIN</td>
-<td>UBICACION</td>
-<td>PARTICIPANTES</td>
-<td>PRECIO</td>
-<td>IMAGEN</td>
-<td>PUNTOS</td>
+<div  id="cabecera">
+<h1>Actividades  </h1>
+</div>
+
+<div style="overflow-x: auto;width:95%;margin: auto;">
+<table style="margin:  auto;" id="tabla" class="tablesorter">
+ <thead>
+
+<tr>
+<tr><th>ID <i class="fas fa-sort"></i></th>
+<th>NOMBRE <i class="fas fa-sort"></i></th>
+<th>FECHA INICIO <i class="fas fa-sort"></i></th>
+<th>FECHA FIN <i class="fas fa-sort"></i></th>
+<th>UBICACION <i class="fas fa-sort"></i></th>
+<th>PARTICIPANTES <i class="fas fa-sort"></i></th>
+<th>PRECIO <i class="fas fa-sort"></i></th>
+<th>IMAGEN <i class="fas fa-sort"></i></th>
+<th>PUNTOS <i class="fas fa-sort"></i></th>
 </tr>
+</thead>
+<tbody>
 <c:forEach items="${listado}" var="unaActividad">	
 	<tr>
 		<td>${unaActividad[0]}</td>
@@ -34,14 +49,32 @@
 		<td>${unaActividad[6]}</td>
 		<td>${unaActividad[7]}</td>
 		<td>${unaActividad[8]}</td>
-		<td><a href="BorrarActividad.do?idBorrar=${unaActividad[1]}">Borrar</a></td>
-				<td><a href="contenido/actividades/ModificarActividades.jsp?idactividad=${unaActividad[0]}&nombre=${unaActividad[1]}&fechaInicio=${unaActividad[2]}&fechaFin=${unaActividad[3]}&ubicacion=${unaActividad[4]}&numParticipantes=${unaActividad[5]}&precio=${unaActividad[6]}&imagen=${unaActividad[7]}&puntos=${unaActividad[8]}">Modificar</a></td>
+		<td><a id="icono" href="BorrarActividad.do?idBorrar=${unaActividad[1]}"><i class="fas fa-trash-alt"></i></a></td>
+				<td><a id="icono" href="contenido/actividades/ModificarActividades.jsp?idactividad=${unaActividad[0]}&nombre=${unaActividad[1]}&fechaInicio=${unaActividad[2]}&fechaFin=${unaActividad[3]}&ubicacion=${unaActividad[4]}&numParticipantes=${unaActividad[5]}&precio=${unaActividad[6]}&imagen=${unaActividad[7]}&puntos=${unaActividad[8]}"><i class="far fa-edit"></i></a></td>
 		
 	</tr>
 </c:forEach>
+</tbody>
 </table>
+</div>
 
-<a href="/Demo_Web/index.html">Volver al index</a>
+
+             <div class="seccion">
+                 
+                 <div class="cajamenu">
+                        <a href="contenido/actividades/FormInsertarActividad.jsp">Insertar Actividad
+                                <br>
+                                <i class="fas fa-sort-amount-up"></i></a>
+
+                 </div>
+                 <div class="cajamenu">
+                     <a href="/Demo_Web/index.html">Volver al Menú
+                        <br>
+                        <i class="fas fa-undo"></i></a></div>
+               
+          
+            
+         </div>
 	
 
 

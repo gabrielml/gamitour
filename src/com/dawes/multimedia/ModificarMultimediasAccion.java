@@ -23,7 +23,7 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 		
 
 
-	Multimedia m=(Multimedia)su.getDetalleMultimedia(request.getParameter("titulo"));
+		Multimedia m=(Multimedia)su.getDetalleMultimedia(request.getParameter("titulo"));
 		m.setCliente((Cliente)su.getDetalleCliente(request.getParameter("nombreClienteNuevo")));
 		m.setPruebadeportiva((Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("nombrepuebadepNuevo")));
 		
@@ -34,6 +34,7 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 			SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
 			String strFecha = Fecha;
 			fecha = formatoDelTexto.parse(strFecha);
+			m.setFecha(fecha);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,7 +46,7 @@ ServiceGenericDAO su = new ServiceGenericDAOImp();
 		Integer puntos = Integer.parseInt(pCambio);
 		m.setPuntosacumulados(puntos);
 		
-		m.setTitulo("tituloNuevo");
+		m.setTitulo(request.getParameter("tituloNuevo"));
 		
 		su.update(m);
 		//request.setAttribute("listaUsuarios", su.getUsuarios());

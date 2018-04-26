@@ -33,14 +33,34 @@ public class Pruebadeportiva implements java.io.Serializable {
 	private String explicacion;
 	private Integer puntos;
 	private Set<Multimedia> multimedias = new HashSet<Multimedia>(0);
+	private String pdf;
+	private String video;
+	
+	
+	
 
-	
-	
+
+
 	@Override
 	public String toString() {
-		return "Pruebadeportiva [idpruebadeportiva=" + idpruebadeportiva + ", parada=" + parada.getNumeroParada() + ", nombre=" + nombre
+		return "Pruebadeportiva [ parada=" + parada + ", nombre=" + nombre
 				+ ", fechainicio=" + fechainicio + ", fechafin=" + fechafin + ", explicacion=" + explicacion
-				+ ", puntos=" + puntos + ", multimedias=" + multimedias + "]";
+				+ ", puntos=" + puntos + ", multimedias=" + multimedias + ", pdf=" + pdf + ", video=" + video + "]";
+	}
+
+	public Pruebadeportiva( Parada parada, String nombre, Date fechainicio, Date fechafin,
+			String explicacion, Integer puntos, Set<Multimedia> multimedias, String pdf, String video) {
+		super();
+		
+		this.parada = parada;
+		this.nombre = nombre;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.explicacion = explicacion;
+		this.puntos = puntos;
+		this.multimedias = multimedias;
+		this.pdf = pdf;
+		this.video = video;
 	}
 
 	public Pruebadeportiva() {
@@ -51,16 +71,7 @@ public class Pruebadeportiva implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	public Pruebadeportiva(Parada parada, String nombre, Date fechainicio, Date fechafin, String explicacion,
-			Integer puntos, Set<Multimedia> multimedias) {
-		this.parada = parada;
-		this.nombre = nombre;
-		this.fechainicio = fechainicio;
-		this.fechafin = fechafin;
-		this.explicacion = explicacion;
-		this.puntos = puntos;
-		this.multimedias = multimedias;
-	}
+	
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -108,6 +119,22 @@ public class Pruebadeportiva implements java.io.Serializable {
 	public Date getFechafin() {
 		return this.fechafin;
 	}
+	@Column(name = "pdf")
+	public String getPdf() {
+		return pdf;
+	}
+
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
+	}
+	@Column(name = "video")
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+	}
 
 	public void setFechafin(Date fechafin) {
 		this.fechafin = fechafin;
@@ -139,5 +166,6 @@ public class Pruebadeportiva implements java.io.Serializable {
 	public void setMultimedias(Set<Multimedia> multimedias) {
 		this.multimedias = multimedias;
 	}
+	
 
 }

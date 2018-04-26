@@ -51,6 +51,8 @@ public class MostrarPDeportivaAccion extends Accion{
 		Integer puntosInt = pDeportiva.getPuntos();
 		String puntos = String.valueOf(puntosInt);
 		request.setAttribute("puntos", puntos);
+		
+		
 			
 	
 		return "contenido/pDeportivas/ConfirmarBuscarPDeportiva.jsp";

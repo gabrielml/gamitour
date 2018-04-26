@@ -25,18 +25,14 @@ public class ModificarUsuariosAccion extends Accion{
 		
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 		
-		
-		
-		
-		
-		
+
 		Cliente c=(Cliente)su.getDetalleCliente(request.getParameter("nick"));
 		
 		c.setNombre(request.getParameter("nombreNuevo"));
 		c.setApellidos(request.getParameter("apellidosNuevo"));
 		c.setEmail(request.getParameter("emailNuevo"));
 		c.setPassword(request.getParameter("passwordNuevo"));
-		c.setNick(request.getParameter("nickNuevo"));
+		
 		Date fecha = null;
 		try {
 			String fechaNacimiento = request.getParameter("fechaNacimientoNuevo");

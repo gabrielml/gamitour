@@ -4,31 +4,70 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MostrarVotos</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="jquery/js.js"></script>
+<link href="css/mostrar.css" rel="stylesheet">
+
+
 </head>
 <body>
 
-<h1>Votos:</h1>
-<table><tr>
-<tr><td>ID</td>
-<td>PUNTOS </td>
-<td>ID CLIENTE</td>
-<td>ID MULTIMEDIA</td>
+
+
+<div  id="cabecera">
+<h1>Votos  </h1>
+</div>
+
+<div style="overflow-x: auto;width:95%;margin: auto;">
+<table style="margin:  auto;" id="tabla" class="tablesorter">
+ <thead>
+
+<tr>
+<tr><th>ID <i class="fas fa-sort"></th>
+<th>PUNTOS <i class="fas fa-sort"></th>
+<th>NOMBRE CLIENTE <i class="fas fa-sort"></th>
+<th>TITULO MULTIMEDIA <i class="fas fa-sort"></th>
 </tr>
+</thead>
+<tbody>
 <c:forEach items="${listado}" var="unVoto">	
 	<tr>
 		<td>${unVoto[0]}</td>
 		<td>${unVoto[1]}</td>
 		<td>${unVoto[2]}</td>
 		<td>${unVoto[3]}</td>
-		<td><a href="BorrarVoto.do?idBorrar=${unVoto[0]}">Borrar</a></td>
-		<td><a href="modificarVotos.jsp?idvoto=${unVoto[0]}&cliente=${unVoto[1]}&multimedia=${unVoto[2]}&puntos=${unVoto[3]}">Modificar</a></td>
+		<td><a id="icono" href="BorrarVoto.do?idBorrar=${unVoto[0]}"><i class="fas fa-trash-alt"></i></a></td>
+		<td><a id="icono" href="contenido/votos/ModificarVotos.jsp?idvoto=${unVoto[0]}&cliente=${unVoto[2]}&multimedia=${unVoto[3]}&puntos=${unVoto[1]}"><i class="far fa-edit"></i></a></td>
 		
 	</tr>
 </c:forEach>
+</tbody>
 </table>
 
-<a href="/Demo_Web/index.html">Volver al index</a>
+</div>
+
+
+             <div class="seccion">
+                 
+                 <div class="cajamenu">
+                        <a href="contenido/votos/FormInsertarVoto.jsp">Insertar Votos
+                                <br>
+                                <i class="fas fa-sort-amount-up"></i></a>
+
+                 </div>
+                 <div class="cajamenu">
+                     <a href="/Demo_Web/index.html">Volver al Menú
+                        <br>
+                        <i class="fas fa-undo"></i></a></div>
+               
+          
+            
+         </div>
+	
+
 </body>
 </html>

@@ -234,7 +234,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Comentario> getMostrarComentarios() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcomentario, c.texto, c.cliente.idcliente, c.multimedia.idmultimedia) FROM Comentario as c");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcomentario, c.texto, c.cliente.nick, c.multimedia.titulo) FROM Comentario as c");
 		List<Comentario> listado= q.list();
 		
 		sf.getCurrentSession().getTransaction().commit();										
@@ -302,7 +302,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebadeportiva> getMostrarPruebasDeportiva() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada) FROM Pruebadeportiva as pd");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada, pd.pdf, pd.video) FROM Pruebadeportiva as pd");
 		List<Pruebadeportiva> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();										
 		return listado;
@@ -311,7 +311,7 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Multimedia> getMostrarMultimedias() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(m.idmultimedia,m.fecha,m.comentario,m.imagen,m.video,m.cliente.idcliente,m.pruebadeportiva.idpruebadeportiva,m.puntosacumulados,m.titulo ) FROM Multimedia as m");
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(m.idmultimedia,m.fecha,m.comentario,m.imagen,m.video,m.cliente.nick,m.pruebadeportiva.nombre,m.puntosacumulados,m.titulo ) FROM Multimedia as m");
 		List<Multimedia> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();										
 		return listado;

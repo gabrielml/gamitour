@@ -55,11 +55,18 @@ public class InsertarPDeportiva extends Accion {
 		String explicacion = request.getParameter("explicacion");
 		
 		String puntosString = request.getParameter("puntos");
+		
 		Integer puntos = Integer.parseInt(puntosString);
 		
 		Set<Multimedia> multimedias = new HashSet<Multimedia>(0);
 		
-		Pruebadeportiva pDeportiva = new Pruebadeportiva(parada, nombre, fechaInicioDate, fechaFinDate, explicacion, puntos, multimedias);
+		
+		String pdf = request.getParameter("pdf");
+		
+		String video = request.getParameter("video");
+		
+		Pruebadeportiva pDeportiva = new Pruebadeportiva(parada, nombre, fechaInicioDate, fechaFinDate, explicacion, puntos, multimedias,pdf,video);
+		
 		su.insertar(pDeportiva);
 		
 		return "index.html";

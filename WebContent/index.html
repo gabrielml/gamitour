@@ -1,72 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>INDEX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/menuadministrador.css" />
+     <link rel="stylesheet" type="text/css" href="cssCabecera.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Menu Administrador</title>
+      <style type="text/css">
+   .principal{
+    width: 230px;
+    border: 1px solid rgba(212, 209, 208, 1);
+    text-align: center;
+    color: white;
+    margin:auto;
+    }
+    
+    
+    .principal a {
+    display: block;
+    font-size: 1.5em;
+    text-decoration: none;
+    background-color: #1F2D3D;
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+
+.principal :hover {
+    background-color: #64A7D1;
+    transition: 0.8s;
+}
+   
+    
+   </style>
 </head>
 
 <body>
-<!-- ACTIVIDADES -->
-<br/>
-<br>CAMBIO<br>
-<a href="contenido/actividades/FormInsertarActividad.jsp">Insertar actividad</a><br/>
-<a href="contenido/actividades/FormBuscarActividad.jsp">Buscar actividad</a><br/>
-<a href="MostrarActividades.do">Mostrar actividades</a><br/>
-<!-- COMENTARIOS -->
-<br/>
-<a href="contenido/comentarios/FormInsertarComentario.jsp">Insertar comentario</a><br/>
-<a href="contenido/comentarios/FormBuscarComentario.jsp">Buscar comentario</a></br>
-<a href="MostrarComentarios.do">Mostrar comentarios</a></br>
-<!-- ITINERARIOS -->
-<br/>
-<a href="contenido/itinerarios/FormInsertarItinerario.jsp">Insertar itinerario</a><br/>
-<a href="contenido/itinerarios/FormBuscarItinerario.jsp">Buscar itinerario</a><br/>
-<a href="MostrarItinerarios.do">Mostrar itinerarios</a><br/>
-<!-- MULTIMEDIAS -->
-<br/>
-<a href="contenido/multimedias/FormInsertarMultimedia.jsp">Insertar multimedia</a><br/>
-<a href="contenido/multimedias/FormBuscarMultimedia.jsp">Mostrar multimedia</a></br>
-<a href="MostrarMultimedias.do">Mostrar multimedias</a><br/>
-<!-- NOTICIAS -->
-<br/>
-<a href="contenido/noticias/FormInsertarNoticia.jsp">Insertar noticia</a><br/>
-<a href="contenido/noticias/FormBuscarNoticia.jsp">Buscar noticia</a><br/>
-<a href="MostrarNoticias.do">Mostrar noticias</a></br>
-<!-- PARADAS -->
-<br/>
-<a href="contenido/paradas/FormInsertarParada.jsp">Insertar parada</a><br/>
-<a href="contenido/paradas/FormBuscarParada.jsp">Buscar parada</a><br/>
-<a href="MostrarParadas.do">Mostrar paradas</a><br/>
-<!-- PRUEBAS CULTURALES -->
-<br/>
-<a href="contenido/pCulturales/FormInsertarPCultural.jsp">Insertar prueba cultural</a><br/>
-<a href="contenido/pCulturales/FormBuscarPCultural.jsp">Buscar prueba cultural</a><br/>
-<a href="MostrarPCulturales.do">Mostrar pruebas culturales</a><br/>
-<!-- PRUEBAS DEPORTIVAS -->
-<br/>
-<a href="contenido/pDeportivas/FormInsertarPDeportiva.jsp">Insertar prueba deportiva</a><br/>
-<a href="contenido/pDeportivas/FormBuscarPDeportiva.jsp">Buscar prueba deportiva</a><br/>
-<a href="MostrarPDeportivas.do">Mostrar pruebas deportivas</a><br/>
-<!-- PREMIOS -->
-<br/>
-<a href="contenido/premios/FormInsertarPremio.jsp">Insertar premio</a><br/>
-<a href="contenido/premios/FormBuscarPremio.jsp">Buscar premio</a><br/>
-<a href="MostrarPremios.do">Mostrar premios</a><br/>
-<!-- ROLES -->
-<br/>
-<a href="contenido/roles/FormInsertarRol.jsp">Insertar rol</a><br/>
-<a href="contenido/roles/FormBuscarRol.jsp">Busar rol</a><br/>
-<a href="MostrarRoles.do">Mostrar roles</a><br/>
-<!-- USUARIOS -->
-<br/>
-<a href="contenido/usuarios/FormInsertarUsuario.jsp">Insertar usuario</a><br/>
-<a href="contenido/usuarios/FormBuscarUsuario.jsp">Mostrar un usuario</a><br/>
-<a href="MostrarUsuarios.do">Mostrar usuarios</a><br/>
-<!-- VOTOS -->
-<br/>
-<a href="contenido/votos/FormInsertarVoto.jsp">Insertar voto</a><br/>
-<a href="contenido/votos/FormBuscarVoto.jsp">Buscar voto</a></br>
-<a href="MostrarVotos.do">Mostrar votos</a></br>
+   
+
+    <div class="contenedor-general">
+        <!--Pagina de inicio para el panel de administrador-->
+        <div class="inicio" id="cinicio" >
+           <div id="cabecera" style="height:65px;">
+     
+            <svg viewBox="0 0 1300 300">
+
+       
+      
+        <!-- Clippath  with text -->
+        <clippath id="cp-text">
+          <text text-anchor="middle"
+                x="50%"
+                y="50%"
+                dy=".35em"
+                class="text--line"
+                >
+            GAMITOUR 
+          </text>
+        </clippath>
+      
+        <!-- Group for shadow -->
+        <g clip-path="url(#cp-text)" class="shadow">
+          <rect
+                width="100%"
+                height="100%"         
+                class="anim-shape anim-shape--shadow"
+                ></rect>
+        </g>
+      
+        <!-- Group with clippath for text-->
+        <g clip-path="url(#cp-text)" class="colortext">
+          <!-- Animated shapes inside text -->
+          <rect
+                width="100%"
+                height="100%"         
+                class="anim-shape"
+                ></rect>
+          <rect
+                width="80%"
+                height="100%"         
+                class="anim-shape"
+                ></rect>
+          <rect
+                width="60%"
+                height="100%"         
+                class="anim-shape"
+                ></rect>
+          <rect
+                width="40%"
+                height="100%"         
+                class="anim-shape"
+                ></rect>
+          <rect
+                width="20%"
+                height="100%"         
+                class="anim-shape"
+                ></rect>
+        </g>
+      
+        <!-- Transparent copy of text to keep
+               patterned text selectable -->
+        <use xlink:href="#s-text"
+             class="text--transparent"></use>
+      
+      </svg>
+           
+            </div>
+            
+            
+            <hr>
+            <br><br>
+           
+<div class="principal"><a href="indexpanel.html"  id=""><img style="width:35px;background-color:white;color:red;" src="images/iconover.png"/> Ver Principal</a></div>
+
+            <div class="seccion" style="margin-top:100px;" >
+                <div>
+                <div class="cajamenu"><a href="MostrarActividades.do" id="actividad2">Actividades</a></div>
+                <div class="cajamenu"><a href="MostrarUsuarios.do" id="clientes2">Usuarios</a></div>
+                <div class="cajamenu"><a href="MostrarComentarios.do" id="comentarios2">Comentarios</a></div> 
+            </div>
+            <div>  
+                <div class="cajamenu"><a href="MostrarItinerarios.do" id="itinerarios2">Itinerarios</a></div>                        
+                <div class="cajamenu"><a href="MostrarMultimedias.do" id="multimedia2">Multimedia</a></div>
+                <div class="cajamenu"><a href="MostrarNoticias.do" id="noticias2">Noticias</a></div>
+            </div>
+            <div>  
+            
+                <div class="cajamenu"><a href="MostrarParadas.do" id="paradas2">Paradas</a></div>
+                <div class="cajamenu"><a href="MostrarPremios.do" id="premios2">Premios</a></div>  
+                <div class="cajamenu"><a href="MostrarPCulturales.do" id="pruebasc2">Prueba Cultural</a></div> 
+            </div>
+            <div>      
+                <div class="cajamenu"><a href="MostrarPDeportivas.do" id="pruebasd2">Prueba Deportiva</a></div>
+                <div class="cajamenu"><a href="MostrarRoles.do" id="roles2">Roles</a></div>
+                <div class="cajamenu"><a href="MostrarVotos.do" id="votos2">Votos</a></div>
+           
+            </div>
+        </div>
+      </div>
+      </div>
 </body>
+
 </html>

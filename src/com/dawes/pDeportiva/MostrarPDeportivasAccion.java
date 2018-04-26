@@ -16,7 +16,6 @@ public class MostrarPDeportivasAccion extends Accion{
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 
 		request.setAttribute("listado", su.getMostrarPruebasDeportiva());
-		System.out.println(su.getMostrarParadas());
 		
 		
 		return "contenido/pDeportivas/ConfirmarMostrarPDeportivas.jsp";

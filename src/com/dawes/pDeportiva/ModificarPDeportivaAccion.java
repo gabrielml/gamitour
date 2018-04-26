@@ -53,6 +53,13 @@ public class ModificarPDeportivaAccion extends Accion {
 		String recepcion = request.getParameter("puntosNuevos");
 		int puntosNuevos = Integer.parseInt(recepcion);
 		pdeportiva.setPuntos(puntosNuevos);
+		
+		String pdfNuevo = request.getParameter("pdfNuevo");
+		pdeportiva.setPdf(pdfNuevo);
+		
+		String videoNuevo = request.getParameter("videoNuevo");
+		pdeportiva.setVideo(videoNuevo);
+		
 
 		service.update(pdeportiva);
 

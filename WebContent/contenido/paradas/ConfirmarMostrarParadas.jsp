@@ -4,24 +4,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MostrarParadas</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="jquery/js.js"></script>
+<link href="css/mostrar.css" rel="stylesheet">
+
+
 </head>
 <body>
 
-<h1>Paradas: </h1>
-<table><tr>
-<tr><td>ID parada</td>
-<td>NOMBRE </td>
-<td>NUMERO PARADA</td>
-<td>UBICACION</td>
-<td>HISTORIA</td>
-<td>ANECDOTARIO</td>
-<td>GASTRONOMIA</td>
-<td>IMAGEN</td>
-<td>ITINERARIO</td>
+<div  id="cabecera">
+<h1>Paradas  </h1>
+</div>
+
+<div style="overflow-x: auto;width:95%;margin: auto;">
+<table style="margin:  auto;" id="tabla" class="tablesorter">
+ <thead>
+
+<tr>
+<tr><th>ID parada <i class="fas fa-sort"></th>
+<th>NOMBRE <i class="fas fa-sort"></th>
+<th>NUMERO PARADA <i class="fas fa-sort"></th>
+<th>UBICACION <i class="fas fa-sort"></th>
+<th>HISTORIA <i class="fas fa-sort"></th>
+<th>ANECDOTARIO <i class="fas fa-sort"></th>
+<th>GASTRONOMIA <i class="fas fa-sort"></th>
+<th>IMAGEN <i class="fas fa-sort"></th>
+<th>ITINERARIO <i class="fas fa-sort"></th>
 
 </tr>
+</thead>
+<tbody>
 <c:forEach items="${listado}" var="unaParada">	
 	<tr>
 		<td>${unaParada[0]}</td>
@@ -33,11 +49,30 @@
 		<td>${unaParada[6]}</td>
 		<td>${unaParada[7]}</td>
 		<td>${unaParada[8]}</td>
-		<td><a href="BorrarParada.do?numParadaBorrar=${unaParada[2]}">Borrar</a></td>
-		<td><a href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada[0]}&nombre=${unaParada[1]}&numeroParada=${unaParada[2]}&ubicacion=${unaParada[3]}&historia=${unaParada[4]}&anecdotario=${unaParada[5]}&gastronomia=${unaParada[6]}&imagen=${unaParada[7]}&itinerario=${unaParada[8]}">Modificar</a></td>
+		<td><a id="icono" href="BorrarParada.do?numParadaBorrar=${unaParada[2]}"><i class="fas fa-trash-alt"></i></a></td>
+		<td><a id="icono" href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada[0]}&nombre=${unaParada[1]}&numeroParada=${unaParada[2]}&ubicacion=${unaParada[3]}&historia=${unaParada[4]}&anecdotario=${unaParada[5]}&gastronomia=${unaParada[6]}&imagen=${unaParada[7]}&itinerario=${unaParada[8]}"><i class="far fa-edit"></i></a></td>
 	</tr>
 </c:forEach>
+</tbody>
 </table>
-<a href="/Demo_Web/index.html">Volver al index</a>
+</div>
+
+
+             <div class="seccion">
+                 
+                 <div class="cajamenu">
+                        <a href="contenido/paradas/FormInsertarParada.jsp">Insertar Parada
+                                <br>
+                                <i class="fas fa-sort-amount-up"></i></a>
+
+                 </div>
+                 <div class="cajamenu">
+                     <a href="/Demo_Web/index.html">Volver al Menú
+                        <br>
+                        <i class="fas fa-undo"></i></a></div>
+               
+          
+            
+         </div>
 </body>
 </html>

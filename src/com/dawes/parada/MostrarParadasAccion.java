@@ -16,8 +16,6 @@ public class MostrarParadasAccion extends Accion{
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 
 		request.setAttribute("listado", su.getMostrarParadas());
-		System.out.println(su.getMostrarParadas());
-		
 		
 		return "contenido/paradas/ConfirmarMostrarParadas.jsp";
 	}
