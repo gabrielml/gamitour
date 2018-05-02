@@ -169,17 +169,29 @@ public class ServiceGenericDAOImp implements ServiceGenericDAO{
 		// TODO Auto-generated method stub
 		return g.getMostrarItinerarios();
 	}
-
+	
+	
 	@Override
 	public List<Parada> getMostrarParadas() {
 		// TODO Auto-generated method stub
 		return g.getMostrarParadas();
 	}
-
+	
+	@Override
+	public List<Parada> getMostrarParadasItinerario(int id) {
+		// TODO Auto-generated method stub
+		return g.getMostrarParadasItinerario(id);
+	}
+	
 	@Override
 	public List<Pruebacultural> getMostrarPruebasCultural() {
 		// TODO Auto-generated method stub
 		return g.getMostrarPruebasCultural();
+	}
+	
+	@Override
+	public List<Pruebacultural> getMostrarPCulturalesParada(int id) {
+		return g.getMostrarPCulturalesParada(id);
 	}
 
 	@Override
@@ -187,11 +199,15 @@ public class ServiceGenericDAOImp implements ServiceGenericDAO{
 		// TODO Auto-generated method stub
 		return g.getMostrarPruebasDeportiva();
 	}
+	
+	@Override
+	public List<Pruebadeportiva> getMostrarPDeportivasParada(int id) {
+		return g.getMostrarPDeportivasParada(id);
+	}
 
 	@Override
 	public List<Multimedia> getMostrarMultimedias() {
 		// TODO Auto-generated method stub
 		return g.getMostrarMultimedias();
 	}
-
 }

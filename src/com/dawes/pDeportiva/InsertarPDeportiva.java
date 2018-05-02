@@ -26,9 +26,11 @@ public class InsertarPDeportiva extends Accion {
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 		
 		String numeroParada = request.getParameter("numParada");
+		System.out.println("ESTOY EN InsertarPDeportiva.java, el numParada es " + numeroParada);
 		Integer numParada = Integer.parseInt(numeroParada);
-		Parada parada = (Parada) su.getDetalleParada(numParada);
-		
+		System.out.println("ESTOY EN InsertarPDeportiva.java, el INTEGER es " + numParada);
+		Parada parada = (Parada)su.getDetalleParada(numParada);
+		System.out.println("ESTOY EN InsertarPDeportiva.java, el OBJETO PARADA es " + parada.getNumeroParada());
 		
 		String nombre = request.getParameter("nombre");
 		
@@ -38,7 +40,6 @@ public class InsertarPDeportiva extends Accion {
 		try {
 			fechaInicioDate = formateoFechaInicio.parse(fechaInicioString);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -48,14 +49,12 @@ public class InsertarPDeportiva extends Accion {
 		try {
 			fechaFinDate = formateoFechaFin.parse(fechaFinString);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		String explicacion = request.getParameter("explicacion");
 		
 		String puntosString = request.getParameter("puntos");
-		
 		Integer puntos = Integer.parseInt(puntosString);
 		
 		Set<Multimedia> multimedias = new HashSet<Multimedia>(0);
@@ -65,7 +64,7 @@ public class InsertarPDeportiva extends Accion {
 		
 		String video = request.getParameter("video");
 		
-		Pruebadeportiva pDeportiva = new Pruebadeportiva(parada, nombre, fechaInicioDate, fechaFinDate, explicacion, puntos, multimedias,pdf,video);
+		Pruebadeportiva pDeportiva = new Pruebadeportiva(parada, nombre, fechaInicioDate, fechaFinDate, explicacion, puntos, multimedias, pdf, video);
 		
 		su.insertar(pDeportiva);
 		

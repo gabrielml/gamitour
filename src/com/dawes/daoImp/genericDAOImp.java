@@ -152,13 +152,13 @@ public class genericDAOImp implements genericDAO{
 	}
 
 	@Override
-	public Object getDetalleParada(int numeroParada) {
+	public Object getDetalleParada(int busqueda) {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT pa FROM Parada pa where numeroParada=:numeroParada");
-		q.setParameter("numeroParada", numeroParada);
+		Query q = sf.getCurrentSession().createQuery("SELECT pa FROM Parada pa where numeroParada =:numeroParada");
+		q.setParameter("numeroParada", busqueda);
 		Parada parada = (Parada) q.getSingleResult();
 		sf.getCurrentSession().getTransaction().commit();
-		sf.getCurrentSession().close();
+		//sf.getCurrentSession().close();
 		return parada;
 	}
 
@@ -264,11 +264,22 @@ public class genericDAOImp implements genericDAO{
 		sf.getCurrentSession().close();
 		return listado;
 	}
-
+	
 	@Override
 	public List<Parada> getMostrarParadas() {
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p");
+		List<Parada> listado= q.list();
+		sf.getCurrentSession().getTransaction().commit();	
+		sf.getCurrentSession().close();
+		return listado;
+	}
+	
+	@Override
+	public List<Parada> getMostrarParadasItinerario(int id) {
+		sf.getCurrentSession().beginTransaction();
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p WHERE p.itinerario.iditinerario=:id");
+		q.setParameter("id", id);
 		List<Parada> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
@@ -284,11 +295,34 @@ public class genericDAOImp implements genericDAO{
 		sf.getCurrentSession().close();
 		return listado;
 	}
+	
+	@Override
+	public List<Pruebacultural> getMostrarPCulturalesParada(int id) {
+		System.out.println("EL ID DE LA PARADA ES: " + id);
+		sf.getCurrentSession().beginTransaction();
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc WHERE pc.parada.idparada=:id");
+		q.setParameter("id", id);
+		List<Pruebacultural> listado= q.list();
+		sf.getCurrentSession().getTransaction().commit();	
+		sf.getCurrentSession().close();
+		return listado;
+	}
 
 	@Override
 	public List<Pruebadeportiva> getMostrarPruebasDeportiva() {
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada, pd.pdf, pd.video) FROM Pruebadeportiva as pd");
+		List<Pruebadeportiva> listado= q.list();
+		sf.getCurrentSession().getTransaction().commit();	
+		sf.getCurrentSession().close();
+		return listado;
+	}
+	
+	@Override
+	public List<Pruebadeportiva> getMostrarPDeportivasParada(int id) {
+		sf.getCurrentSession().beginTransaction();
+		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada, pd.pdf, pd.video) FROM Pruebadeportiva as pd WHERE pd.parada.idparada=:id");
+		q.setParameter("id", id);
 		List<Pruebadeportiva> listado= q.list();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();

@@ -15,7 +15,7 @@ pageEncoding="ISO-8859-1"%>
 
         <body>
             <div id="cabecera">
-                <h1>Se muestran todas las pruebas culturales </h1>
+                <h1>Las pruebas culturales de la parada "${nombre}" son: </h1>
             </div>
             <div style="overflow-x: auto;width:95%;margin: auto;">
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
@@ -57,6 +57,9 @@ pageEncoding="ISO-8859-1"%>
                     <a href="/Demo_Web/index.html">Volver al Menu
                     <br>
                     <i class="fas fa-undo"></i></a></div>
+                <div>
+                    <input type="submit" value="Volver Atras" onclick="history.back()" />
+                </div>
             </div>
         </body>
 
