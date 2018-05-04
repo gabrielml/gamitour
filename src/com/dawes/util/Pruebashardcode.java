@@ -13,8 +13,8 @@ public class Pruebashardcode {
 	public void generic(){
 		//System.out.println(su.getMostrarParadasItinerario(5));
 		//System.out.println(su.getMostrarPDeportivasParada(4));
-		//System.out.println(su.getDetalleParada(2)); --> NO FUNCIONA
-		System.out.println(su.getMostrarPCulturalesParada(0));
+		//System.out.println(su.getDetalleParada(2));
+		
 	}
 	
 	public static void main(String[] args) {

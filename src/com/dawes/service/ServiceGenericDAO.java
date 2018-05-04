@@ -59,9 +59,5 @@ public interface ServiceGenericDAO {
 		public List<Pruebadeportiva> getMostrarPDeportivasParada(int id);
 		
 		public Object getDetalleMultimedia(String busqueda);
-		public List<Multimedia> getMostrarMultimedias();
-		
-		
-		
-		
+		public List<Multimedia> getMostrarMultimedias();	
 	}

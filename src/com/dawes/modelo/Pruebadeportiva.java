@@ -36,14 +36,9 @@ public class Pruebadeportiva implements java.io.Serializable {
 	private String pdf;
 	private String video;
 	
-	
-	
-
-
-
 	@Override
 	public String toString() {
-		return "Pruebadeportiva [ parada=" + parada + ", nombre=" + nombre
+		return "Pruebadeportiva [ parada=" + parada.getNumeroParada() + ", nombre=" + nombre
 				+ ", fechainicio=" + fechainicio + ", fechafin=" + fechafin + ", explicacion=" + explicacion
 				+ ", puntos=" + puntos + ", multimedias=" + multimedias + ", pdf=" + pdf + ", video=" + video + "]";
 	}
@@ -70,8 +65,6 @@ public class Pruebadeportiva implements java.io.Serializable {
 		this.parada = parada;
 		this.nombre = nombre;
 	}
-
-	
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -166,6 +159,4 @@ public class Pruebadeportiva implements java.io.Serializable {
 	public void setMultimedias(Set<Multimedia> multimedias) {
 		this.multimedias = multimedias;
 	}
-	
-
 }

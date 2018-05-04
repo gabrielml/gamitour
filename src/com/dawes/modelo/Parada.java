@@ -34,10 +34,6 @@ public class Parada implements java.io.Serializable {
 	private Set<Pruebacultural> pruebaculturals = new HashSet<Pruebacultural>(0);
 	private Set<Pruebadeportiva> pruebadeportivas = new HashSet<Pruebadeportiva>(0);
 
-	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Parada [idparada=" + idparada + ", itinerario=" + itinerario.getNombre() + ", nombre=" + nombre + ", numeroParada="
@@ -170,5 +166,4 @@ public class Parada implements java.io.Serializable {
 	public void setPruebadeportivas(Set<Pruebadeportiva> pruebadeportivas) {
 		this.pruebadeportivas = pruebadeportivas;
 	}
-
 }

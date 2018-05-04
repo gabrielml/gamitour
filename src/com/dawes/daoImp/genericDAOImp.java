@@ -133,7 +133,6 @@ public class genericDAOImp implements genericDAO{
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT a FROM Actividad a where nombre=:nombre");
 		q.setParameter("nombre", busqueda);
-		System.out.println("EL NOMBRE ES: " + busqueda);
 		Actividad actividad = (Actividad) q.getSingleResult();
 		sf.getCurrentSession().getTransaction().commit();
 		sf.getCurrentSession().close();
@@ -158,7 +157,7 @@ public class genericDAOImp implements genericDAO{
 		q.setParameter("numeroParada", busqueda);
 		Parada parada = (Parada) q.getSingleResult();
 		sf.getCurrentSession().getTransaction().commit();
-		//sf.getCurrentSession().close();
+		sf.getCurrentSession().close();
 		return parada;
 	}
 
@@ -298,7 +297,6 @@ public class genericDAOImp implements genericDAO{
 	
 	@Override
 	public List<Pruebacultural> getMostrarPCulturalesParada(int id) {
-		System.out.println("EL ID DE LA PARADA ES: " + id);
 		sf.getCurrentSession().beginTransaction();
 		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc WHERE pc.parada.idparada=:id");
 		q.setParameter("id", id);
