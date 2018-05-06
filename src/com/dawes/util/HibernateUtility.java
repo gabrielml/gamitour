@@ -11,7 +11,7 @@ public class HibernateUtility {
   
     public static synchronized SessionFactory getSessionFactory() {
  
-    	// implementación del patrón Singleton, para que no haya más que una 
+    	// implementacion del patron Singleton, para que no haya mas que una 
     	// instancia de la factoria de sesiones.
         if (sesionFactory == null) {
             sesionFactory = new Configuration().configure().buildSessionFactory();
