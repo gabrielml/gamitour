@@ -45,19 +45,19 @@ public interface ServiceGenericDAO {
 		public Object getDetalleItinerario(String busqueda);
 		public List<Itinerario> getMostrarItinerarios();
 		
+		
 		public Object getDetalleParada(int busqueda);
 		public List<Parada> getMostrarParadas();
+		public List<Parada> getMostrarParadasItinerario(int id);
 		
 		public Object getDetallePruebaCultural(String busqueda);
 		public List<Pruebacultural> getMostrarPruebasCultural();
+		public List<Pruebacultural> getMostrarPCulturalesParada(int id);
 		
 		public Object getDetallePruebaDeportiva(String busqueda);
 		public List<Pruebadeportiva> getMostrarPruebasDeportiva();
+		public List<Pruebadeportiva> getMostrarPDeportivasParada(int id);
 		
 		public Object getDetalleMultimedia(String busqueda);
-		public List<Multimedia> getMostrarMultimedias();
-		
-		
-		
-		
+		public List<Multimedia> getMostrarMultimedias();	
 	}

@@ -32,6 +32,7 @@ import com.dawes.pCultural.InsertarPCultural;
 import com.dawes.pCultural.ModificarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalesAccion;
+import com.dawes.pCultural.MostrarPCulturalesParadaAccion;
 import com.dawes.pDeportiva.BorrarPDeportivaAccion;
 import com.dawes.pDeportiva.InsertarPDeportiva;
 import com.dawes.pDeportiva.ModificarPDeportivaAccion;
@@ -40,8 +41,10 @@ import com.dawes.pDeportiva.MostrarPDeportivasAccion;
 import com.dawes.parada.BorrarParadaAccion;
 import com.dawes.parada.InsertarParadaAccion;
 import com.dawes.parada.ModificarParadasAccion;
+import com.dawes.parada.MostrarPDeportivasParadaAccion;
 import com.dawes.parada.MostrarParadaAccion;
 import com.dawes.parada.MostrarParadasAccion;
+import com.dawes.parada.MostrarParadasItinerarioAccion;
 import com.dawes.premio.BorrarPremioAccion;
 import com.dawes.premio.InsertarPremioAccion;
 import com.dawes.premio.MostrarPremioAccion;
@@ -122,6 +125,7 @@ public abstract class Accion {
 			return new ModificarItinerariosAccion();
 		}
 		
+		
 		/*MULTIMEDIAS*/
 		if(tipo.equals("InsertarMultimedias")){
 			return new InsertarMultimediasAccion();
@@ -169,6 +173,9 @@ public abstract class Accion {
 		if(tipo.equals("ModificarParadas")){
 			return new ModificarParadasAccion();
 		}
+		if(tipo.equals("MostrarParadasItinerario")){
+			return new MostrarParadasItinerarioAccion();
+		}
 		
 		/*PRUEBAS CULTURALES*/
 		if(tipo.equals("InsertarPCultural")) {
@@ -186,6 +193,9 @@ public abstract class Accion {
 		if(tipo.equals("ModificarPCultural")){
 			return new ModificarPCulturalAccion();
 		}
+		if(tipo.equals("MostrarPCulturalesParada")){
+			return new MostrarPCulturalesParadaAccion();
+		}
 		
 		/*PRUEBAS DEPORTIVAS*/
 		if(tipo.equals("InsertarPDeportiva")) {
@@ -202,6 +212,9 @@ public abstract class Accion {
 		}
 		if(tipo.equals("ModificarPDeportiva")){
 			return new ModificarPDeportivaAccion();
+		}
+		if(tipo.equals("MostrarPDeportivasParada")){
+			return new MostrarPDeportivasParadaAccion();
 		}
 		
 		/*PREMIOS*/

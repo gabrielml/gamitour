@@ -26,10 +26,6 @@ public class Pruebacultural implements java.io.Serializable {
 	private String respuesta;
 	private Integer puntos;
 
-	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Pruebacultural [idpruebacultural=" + idpruebacultural + ", parada=" + parada.getNumeroParada() + ", nombre=" + nombre
@@ -109,5 +105,4 @@ public class Pruebacultural implements java.io.Serializable {
 	public void setPuntos(Integer puntos) {
 		this.puntos = puntos;
 	}
-
 }

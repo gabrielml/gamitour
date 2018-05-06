@@ -15,7 +15,7 @@ pageEncoding="ISO-8859-1"%>
 
         <body>
             <div id="cabecera">
-                <h1>Se muestran todas las paradas:</h1>
+                <h1>Las paradas del itinerario "${nombre}" son: </h1>
             </div>
             <div style="overflow-x: auto;width:95%;margin: auto;">
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
@@ -40,7 +40,13 @@ pageEncoding="ISO-8859-1"%>
                         <td>${unaParada[5]}</td>
                         <td>${unaParada[6]}</td>
                         <td>${unaParada[7]}</td>
-		                <td>
+                        <td>
+                            <a href="MostrarPDeportivasParada.do?idparada=${unaParada[0]}&nombre=${unaParada[1]}">Ver sus p. deportivas</a>
+                        </td>
+                        <td>
+                            <a href="MostrarPCulturalesParada.do?idparada=${unaParada[0]}&nombre=${unaParada[1]}">Ver sus p. culturales</a>
+                        </td>
+                        <td>
                             <a id="icono" href="BorrarParada.do?numParadaBorrar=${unaParada[2]}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td>
@@ -61,7 +67,11 @@ pageEncoding="ISO-8859-1"%>
                     <a href="/Demo_Web/index.html">Volver al Menu
                 <br>
                  <i class="fas fa-undo"></i></a></div>
+                <div>
+                    <input type="submit" value="Volver Atras" onclick="history.back()" />
+                </div>
             </div>
+
         </body>
 
         </html>
