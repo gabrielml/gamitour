@@ -64,6 +64,8 @@ import com.dawes.voto.ModificarVotosAccion;
 import com.dawes.voto.MostrarVotoAccion;
 import com.dawes.voto.MostrarVotosAccion;
 
+import Seguridad.IniciarSessionAccion;
+
 
 public abstract class Accion {
 	
@@ -279,6 +281,14 @@ public abstract class Accion {
 			return new ModificarVotosAccion();
 		}
 				
+		
+		/*INICIAR SESSION*/
+		if(tipo.equals("iniciarSesion")){
+			System.out.println("pasa por accion");
+			return new IniciarSessionAccion();
+		}
+		
+		
 		return null;
 	}
 }

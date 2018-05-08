@@ -30,7 +30,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			
-		
+		System.out.println("pasa por controller");
 		RequestDispatcher despachador = null;
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());

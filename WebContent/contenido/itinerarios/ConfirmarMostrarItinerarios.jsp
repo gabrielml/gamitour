@@ -34,12 +34,17 @@
                             <td>${unItinerario[2]}</td>
                             <td>${unItinerario[3]}</td>
                             <td>${unItinerario[4]}</td>
-                            <td><a href="MostrarParadasItinerario.do?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}">Ver sus paradas</a></td>
+                           
                             <td>
                                 <a id="icono" href="BorrarItinerario.do?idBorrar=${unItinerario[1]}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td>
                                     <a id="icono" href="contenido/itinerarios/ModificarItinerarios.jsp?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}&categoria=${unItinerario[2]}&duracion=${unItinerario[3]}&ubicacion=${unItinerario[4]}"><i class="far fa-edit"></i></a>
+                                </td>
+                                 <td>
+                                <a title="Ver paradas" id="icono" href="MostrarParadasItinerario.do?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}"><i  class="fas fa-bus"></i>
+
+                                </a>
                                 </td>
                         </tr>
                         </c:forEach>
