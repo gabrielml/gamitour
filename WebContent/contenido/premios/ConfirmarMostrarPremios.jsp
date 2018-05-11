@@ -33,21 +33,23 @@
 <th>FECHA ACTIVACION <i class="fas fa-sort"></th>
 <th>FECHA CONSUMO <i class="fas fa-sort"></th>
 <th>PUNTOS <i class="fas fa-sort"></th>
+<th>Cliente <i class="fas fa-sort"></th>
 
 </tr>
 </thead>
 <tbody>
 <c:forEach items="${listado}" var="unPremio">	
 	<tr>
-		<td>${unPremio[0]}</td>
-		<td>${unPremio[1]}</td>
-		<td>${unPremio[2]}</td>
-		<td>${unPremio[3]}</td>
-		<td>${unPremio[4]}</td>
-		<td>${unPremio[5]}</td>
-		<td>${unPremio[6]}</td>
-		<td><a id="icono" href="BorrarPremio.do?idBorrar=${unPremio[1]}"><i class="fas fa-trash-alt"></i></a></td>
-		<td><a id="icono" href="BorrarPremio.do?idBorrar=${unPremio[1]}"><i class="far fa-edit"></i></a></td>
+		<td>${unPremio.idpremio}</td>
+		<td>${unPremio.nombre}</td>
+		<td>${unPremio.descripcion}</td>
+		<td>${unPremio.imagen}</td>
+		<td>${unPremio.fechaactivacion}</td>
+		<td>${unPremio.fechaconsumo}</td>
+		<td>${unPremio.puntos}</td>
+		<td>${unPremio.cliente.nick}</td>
+		<td><a id="icono" href="BorrarPremio.do?idBorrar=${unPremio.nombre}"><i class="fas fa-trash-alt"></i></a></td>
+		<td><a id="icono" href="真真真真.do?idpremio=${unPremio.idpremio}&nombre=${unPremio.nombre}&descripcion=${unPremio.descripcion}&imagen=${unPremio.imagen}&fechaactivacion=${unPremio.fechaactivacion}&fechaconsumo=${unPremio.fechaconsumo}&puntos=${unPremio.puntos}&puntos=${unPremio.cliente.nick}"><i class="far fa-edit"></i></a></td>
 	</tr>
 </c:forEach>
 </tbody>
@@ -58,7 +60,7 @@
              <div class="seccion">
                  
                  <div class="cajamenu">
-                        <a href="contenido/premios/FormInsertarPremio.jsp">Insertar Premio
+                        <a href="InsertarPremioConSelect.do">Insertar Premio
                                 <br>
                                 <i class="fas fa-sort-amount-up"></i></a>
 

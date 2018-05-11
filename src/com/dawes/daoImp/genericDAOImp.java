@@ -1,6 +1,7 @@
 package com.dawes.daoImp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -39,6 +40,7 @@ public class genericDAOImp implements genericDAO{
 	
 	@Override
 	public void borrar(Object borrar) {
+		
 		sf.getCurrentSession().beginTransaction();
 		sf.getCurrentSession().delete(borrar);
 		sf.getCurrentSession().getTransaction().commit();
@@ -187,12 +189,17 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Noticia> getMostrarNoticias() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(n.idnoticia, n.nombre, n.texto, n.fechaalta, n.fechacaducidad, n.imagen) FROM Noticia as n");
-		List<Noticia> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(n.idnoticia, n.nombre, n.texto, n.fechaalta, n.fechacaducidad, n.imagen) FROM Noticia as n");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Noticia(n.idnoticia, n.nombre, n.texto, n.fechaalta, n.fechacaducidad, n.imagen) FROM Noticia as n");
+		//List<Noticia> listado= q.list();
+		List<Noticia> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
 	}
+	
+
+	
 
 	@Override
 	public List<Rol> getMostrarRoles() {
@@ -207,8 +214,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Cliente> getMostrarClientes() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcliente, c.nombre, c.apellidos,c.fechanacimiento, c.email, c.password, c.telefono, c.direccion, c.codigopostal, c.avatar, c.puntosacumulados, c.fecharegistro, c.rol.idrol, c.nick) FROM Cliente as c");
-		List<Cliente> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcliente, c.nombre, c.apellidos,c.fechanacimiento, c.email, c.password, c.telefono, c.direccion, c.codigopostal, c.avatar, c.puntosacumulados, c.fecharegistro, c.rol.idrol, c.nick) FROM Cliente as c");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Cliente(c.idcliente, c.nombre, c.apellidos,c.fechanacimiento, c.email, c.password, c.telefono, c.direccion, c.codigopostal, c.avatar, c.puntosacumulados, c.fecharegistro, c.nick) FROM Cliente as c");
+		//List<Cliente> listado= q.list();
+		List<Cliente> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();
 		sf.getCurrentSession().close();
 		return listado;
@@ -217,8 +226,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Comentario> getMostrarComentarios() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcomentario, c.texto, c.cliente.nick, c.multimedia.titulo) FROM Comentario as c");
-		List<Comentario> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(c.idcomentario, c.texto, c.cliente.nick, c.multimedia.titulo) FROM Comentario as c");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Comentario(c.idcomentario, c.texto, c.cliente, c.multimedia) FROM Comentario as c");
+		//List<Comentario> listado= q.list();
+		List<Comentario> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -227,8 +238,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Voto> getMostrarVotos() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(v.idvoto, v.puntos, v.cliente.nick, v.multimedia.titulo) FROM Voto as v");
-		List<Voto> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(v.idvoto, v.puntos, v.cliente.nick, v.multimedia.titulo) FROM Voto as v");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Voto(v.idvoto, v.puntos, v.cliente, v.multimedia) FROM Voto as v");
+		//List<Voto> listado= q.list();
+		List<Voto> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -237,8 +250,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Premio> getMostrarPremios() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idpremio, p.nombre, p.descripcion, p.imagen, p.fechaactivacion, p.fechaconsumo, p.puntos, p.cliente.idcliente) FROM Premio as p");
-		List<Premio> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idpremio, p.nombre, p.descripcion, p.imagen, p.fechaactivacion, p.fechaconsumo, p.puntos, p.cliente.idcliente) FROM Premio as p");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Premio(p.idpremio, p.nombre, p.descripcion, p.imagen, p.fechaactivacion, p.fechaconsumo, p.puntos, p.cliente) FROM Premio as p");
+		//List<Premio> listado= q.list();
+		List<Premio> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -247,8 +262,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Actividad> getMostrarActividades() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(a.idactividad,a.nombre,a.fechainicio,a.fechafin,a.ubicacion,a.numparticipantes,a.precio,a.imagen,a.puntos) FROM Actividad as a");
-		List<Actividad> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(a.idactividad,a.nombre,a.fechainicio,a.fechafin,a.ubicacion,a.numparticipantes,a.precio,a.imagen,a.puntos) FROM Actividad as a");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Actividad(a.idactividad,a.nombre,a.fechainicio,a.fechafin,a.ubicacion,a.numparticipantes,a.precio,a.imagen,a.puntos) FROM Actividad as a");
+		//List<Actividad> listado= q.list();
+		List<Actividad> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -257,8 +274,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Itinerario> getMostrarItinerarios() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(i.iditinerario, i.nombre, i.categoria, i.duracion, i.ubicacion) FROM Itinerario as i");
-		List<Itinerario> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(i.iditinerario, i.nombre, i.categoria, i.duracion, i.ubicacion) FROM Itinerario as i");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Itinerario(i.iditinerario, i.nombre, i.categoria, i.duracion, i.ubicacion) FROM Itinerario as i");
+		//List<Itinerario> listado= q.list();
+		List<Itinerario> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -267,8 +286,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Parada> getMostrarParadas() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p");
-		List<Parada> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Parada(p.idparada, p.itinerario, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen) FROM Parada as p");
+		//List<Parada> listado= q.list();
+		List<Parada> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -277,9 +298,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Parada> getMostrarParadasItinerario(int id) {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p WHERE p.itinerario.iditinerario=:id");
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(p.idparada, p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen, p.itinerario.iditinerario) FROM Parada as p WHERE p.itinerario.iditinerario=:id");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Parada(p.idparada,  p.itinerario,p.nombre, p.numeroParada, p.ubicacion, p.historia, p.anecdotario, p.gastronomia, p.imagen) FROM Parada as p WHERE p.itinerario.iditinerario=:id");
 		q.setParameter("id", id);
-		List<Parada> listado= q.list();
+		List<Parada> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -288,8 +310,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebacultural> getMostrarPruebasCultural() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc");
-		List<Pruebacultural> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Pruebacultural(pc.idpruebacultural, pc.parada, pc.nombre,pc.pregunta,pc.respuesta,pc.puntos) FROM Pruebacultural as pc");
+		//List<Pruebacultural> listado= q.list();
+		List<Pruebacultural> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -298,9 +322,9 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebacultural> getMostrarPCulturalesParada(int id) {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pc.idpruebacultural,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos,pc.parada.idparada) FROM Pruebacultural as pc WHERE pc.parada.idparada=:id");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Pruebacultural(pc.idpruebacultural,pc.parada,pc.nombre,pc.pregunta,pc.respuesta,pc.puntos) FROM Pruebacultural as pc WHERE pc.parada.idparada=:id");
 		q.setParameter("id", id);
-		List<Pruebacultural> listado= q.list();
+		List<Pruebacultural> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -309,8 +333,8 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebadeportiva> getMostrarPruebasDeportiva() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada, pd.pdf, pd.video) FROM Pruebadeportiva as pd");
-		List<Pruebadeportiva> listado= q.list();
+		Query q = sf.getCurrentSession().createQuery("SELECT new Pruebadeportiva(pd.idpruebadeportiva, pd.parada,  pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion,pd.puntos, pd.pdf, pd.video) FROM Pruebadeportiva as pd");
+		List<Pruebadeportiva> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -319,9 +343,9 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Pruebadeportiva> getMostrarPDeportivasParada(int id) {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(pd.idpruebadeportiva, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.parada.idparada, pd.pdf, pd.video) FROM Pruebadeportiva as pd WHERE pd.parada.idparada=:id");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Pruebadeportiva(pd.idpruebadeportiva,  pd.parada, pd.nombre, pd.fechainicio, pd.fechafin, pd.explicacion, pd.puntos, pd.pdf, pd.video) FROM Pruebadeportiva as pd WHERE pd.parada.idparada=:id");
 		q.setParameter("id", id);
-		List<Pruebadeportiva> listado= q.list();
+		List<Pruebadeportiva> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;
@@ -330,8 +354,10 @@ public class genericDAOImp implements genericDAO{
 	@Override
 	public List<Multimedia> getMostrarMultimedias() {
 		sf.getCurrentSession().beginTransaction();
-		Query q = sf.getCurrentSession().createQuery("SELECT new list(m.idmultimedia,m.fecha,m.comentario,m.imagen,m.video,m.cliente.nick,m.pruebadeportiva.nombre,m.puntosacumulados,m.titulo ) FROM Multimedia as m");
-		List<Multimedia> listado= q.list();
+		//Query q = sf.getCurrentSession().createQuery("SELECT new list(m.idmultimedia,m.fecha,m.comentario,m.imagen,m.video,m.cliente.nick,m.pruebadeportiva.nombre,m.puntosacumulados,m.titulo ) FROM Multimedia as m");
+		Query q = sf.getCurrentSession().createQuery("SELECT new Multimedia(m.idmultimedia,m.cliente,m.pruebadeportiva,m.fecha,m.comentario,m.imagen,m.video,m.puntosacumulados,m.titulo ) FROM Multimedia as m");
+		//List<Multimedia> listado= q.list();
+		List<Multimedia> listado= q.getResultList();
 		sf.getCurrentSession().getTransaction().commit();	
 		sf.getCurrentSession().close();
 		return listado;

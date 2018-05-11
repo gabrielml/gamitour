@@ -36,12 +36,12 @@
 <tbody>
 <c:forEach items="${listado}" var="unVoto">	
 	<tr>
-		<td>${unVoto[0]}</td>
-		<td>${unVoto[1]}</td>
-		<td>${unVoto[2]}</td>
-		<td>${unVoto[3]}</td>
-		<td><a id="icono" href="BorrarVoto.do?idBorrar=${unVoto[0]}"><i class="fas fa-trash-alt"></i></a></td>
-		<td><a id="icono" href="contenido/votos/ModificarVotos.jsp?idvoto=${unVoto[0]}&cliente=${unVoto[2]}&multimedia=${unVoto[3]}&puntos=${unVoto[1]}"><i class="far fa-edit"></i></a></td>
+		<td>${unVoto.idvoto}</td>
+		<td>${unVoto.puntos}</td>
+		<td>${unVoto.cliente.nick}</td>
+		<td>${unVoto.multimedia.titulo}</td>
+		<td><a id="icono" href="BorrarVoto.do?idBorrar=${unVoto.idvoto}"><i class="fas fa-trash-alt"></i></a></td>
+		<td><a id="icono" href="contenido/votos/ModificarVotos.jsp?idvoto=${unVoto.idvoto}&cliente=${unVoto.cliente.nick}&multimedia=${unVoto.multimedia.titulo}&puntos=${unVoto.puntos}"><i class="far fa-edit"></i></a></td>
 		
 	</tr>
 </c:forEach>
@@ -54,7 +54,7 @@
              <div class="seccion">
                  
                  <div class="cajamenu">
-                        <a href="contenido/votos/FormInsertarVoto.jsp">Insertar Votos
+                        <a href="InsertarVotoConSelect.do">Insertar Votos
                                 <br>
                                 <i class="fas fa-sort-amount-up"></i></a>
 

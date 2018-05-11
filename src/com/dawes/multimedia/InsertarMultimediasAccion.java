@@ -25,8 +25,10 @@ public class InsertarMultimediasAccion extends Accion{
 
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 		 
+
+		
 		Cliente cliente = (Cliente)su.getDetalleCliente(request.getParameter("nick"));	
-		Pruebadeportiva pruebadeportiva = (Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("nombreparada"));	
+		Pruebadeportiva pruebadeportiva = (Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("titulo"));	
 		
 		
 		String comentario = request.getParameter("comentario");	

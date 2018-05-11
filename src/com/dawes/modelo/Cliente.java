@@ -77,6 +77,58 @@ public class Cliente implements java.io.Serializable {
 		this.rol = rol;
 		this.nick = nick;
 	}
+	
+
+	
+
+	public Cliente(Integer idcliente, String nombre, String apellidos, Date fechanacimiento, String email,
+			String password, String telefono, String direccion, String codigopostal, String avatar,
+			Integer puntosacumulados, Date fecharegistro, Rol rol, String nick) {
+		
+		
+		super();
+		this.idcliente = idcliente;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.fechanacimiento = fechanacimiento;
+		this.email = email;
+		this.password = password;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.codigopostal = codigopostal;
+		this.avatar = avatar;
+		this.puntosacumulados = puntosacumulados;
+		this.fecharegistro = fecharegistro;
+		this.rol = rol;
+		this.nick = nick;
+		
+		
+	}
+	//prueba sin rol
+	public Cliente(Integer idcliente, String nombre, String apellidos, Date fechanacimiento, String email,
+			String password, String telefono, String direccion, String codigopostal, String avatar,
+			Integer puntosacumulados, Date fecharegistro,  String nick) {
+		
+		
+		super();
+		this.idcliente = idcliente;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.fechanacimiento = fechanacimiento;
+		this.email = email;
+		this.password = password;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.codigopostal = codigopostal;
+		this.avatar = avatar;
+		this.puntosacumulados = puntosacumulados;
+		this.fecharegistro = fecharegistro;
+		
+		this.nick = nick;
+		
+		
+	}
+
 
 	public Cliente(Rol rol, String nombre, String apellidos, Date fechanacimiento, String email, String password,
 			String telefono, String direccion, String codigopostal, String avatar, Integer puntosacumulados,

@@ -34,12 +34,15 @@
 <tbody>
 <c:forEach items="${listado}" var="unComentario">	
 	<tr>
-		<td>${unComentario[0]}</td>
-		<td>${unComentario[1]}</td>
-		<td>${unComentario[2]}</td>
-		<td>${unComentario[3]}</td>
-		<td><a id="icono" href="BorrarComentario.do?idBorrar=${unComentario[0]}"><i class="fas fa-trash-alt"></i></a></td>
-		<td><a id="icono" href="contenido/comentarios/ModificarComentarios.jsp?idcomentario=${unComentario[0]}&cliente=${unComentario[2]}&multimedia=${unComentario[3]}&texto=${unComentario[1]}"><i class="far fa-edit"></i></a></td>
+		<td>${unComentario.idcomentario}</td>
+		<td>${unComentario.texto}</td>
+		<td>${unComentario.cliente.nick}</td>
+		<td>${unComentario.multimedia.titulo}</td>
+		
+		
+<td><a id="icono" href="BorrarComentario.do?idBorrar=${unComentario.idcomentario}"><i class="fas fa-trash-alt"></i></a></td>
+<td><a id="icono" href="contenido/comentarios/ModificarComentarios.jsp?idcomentario=${unComentario.idcomentario}&cliente=${unComentario.cliente.nick}&multimedia=${unComentario.multimedia.titulo}&texto=${unComentario.texto}"><i class="far fa-edit"></i></a></td>
+		
 		
 	</tr>
 </c:forEach>
@@ -51,7 +54,7 @@
              <div class="seccion">
                  
                  <div class="cajamenu">
-                        <a href="contenido/comentarios/FormInsertarComentario.jsp">Insertar Comentario
+                        <a href="InsertarComentariosConSelect.do">Insertar Comentario
                                 <br>
                                 <i class="fas fa-sort-amount-up"></i></a>
 

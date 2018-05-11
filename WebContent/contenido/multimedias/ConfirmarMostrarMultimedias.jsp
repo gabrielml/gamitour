@@ -26,12 +26,12 @@
  
 <tr>
 <tr><th>ID <i class="fas fa-sort"></th>
+<th>NICK CLIENTE <i class="fas fa-sort"></th>
+<th>PRUEBA DEPORTIVA <i class="fas fa-sort"></th>
 <th>FECHA <i class="fas fa-sort"></th>
 <th>COMENTARIO <i class="fas fa-sort"></th>
 <th>IMAGEN <i class="fas fa-sort"></th>
 <th>VIDEO <i class="fas fa-sort"></th>
-<th>ID CLIENTE <i class="fas fa-sort"></th>
-<th>PRUEBA DEPORTIVA <i class="fas fa-sort"></th>
 <th>PUNTOS <i class="fas fa-sort"></th>
 <th>TITULO <i class="fas fa-sort"></th>
 
@@ -40,17 +40,18 @@
 <tbody>
 <c:forEach items="${listado}" var="unaMultimedia">	
 	<tr>
-		<td>${unaMultimedia[0]}</td>
-		<td>${unaMultimedia[1]}</td>
-		<td>${unaMultimedia[2]}</td>
-		<td>${unaMultimedia[3]}</td>
-		<td>${unaMultimedia[4]}</td>
-		<td>${unaMultimedia[5]}</td>
-		<td>${unaMultimedia[6]}</td>
-		<td>${unaMultimedia[7]}</td>
-		<td>${unaMultimedia[8]}</td>
-		<td><a  id="icono" href="BorrarMultimedia.do?idBorrar=${unaMultimedia[8]}">Borrar</a></td>
-		<td><a id="icono" href="contenido/multimedias/ModificarMultimedias.jsp?idMultimedia=${unaMultimedia[0]}&cliente=${unaMultimedia[5]}&pruebaDeportiva=${unaMultimedia[6]}&fecha=${unaMultimedia[2]}&comentario=${unaMultimedia[3]}&imagen=${unaMultimedia[4]}&video=${unaMultimedia[6]}&puntosAcumulados=${unaMultimedia[7]}&titulo=${unaMultimedia[8]}">Modificar</a></td>
+		
+		<td>${unaMultimedia.idmultimedia}</td>
+		<td>${unaMultimedia.cliente.nick}</td>
+		<td>${unaMultimedia.pruebadeportiva.nombre}</td>
+		<td>${unaMultimedia.fecha}</td>
+		<td>${unaMultimedia.comentario}</td>
+		<td>${unaMultimedia.imagen}</td>
+		<td>${unaMultimedia.video}</td>
+		<td>${unaMultimedia.puntosacumulados}</td>
+		<td>${unaMultimedia.titulo}</td>
+		<td><a  id="icono" href="BorrarMultimedia.do?idBorrar=${unaMultimedia.titulo}">Borrar</a></td>
+		<td><a id="icono" href="contenido/multimedias/ModificarMultimedias.jsp?idMultimedia=${unaMultimedia.idmultimedia}&cliente=${unaMultimedia.cliente.nick}&pruebaDeportiva=${unaMultimedia.pruebadeportiva.nombre}&fecha=${unaMultimedia.fecha}&comentario=${unaMultimedia.comentario}&imagen=${unaMultimedia.imagen}&video=${unaMultimedia.video}&puntosAcumulados=${unaMultimedia.puntosacumulados}&titulo=${unaMultimedia.titulo}">Modificar</a></td>
 		
 		
 	</tr>
@@ -63,7 +64,7 @@
              <div class="seccion">
                  
                  <div class="cajamenu">
-                        <a href="contenido/multimedias/FormInsertarMultimedia.jsp">Insertar Multimedia
+                        <a href="InsertarMultimediasConSelect.do">Insertar Multimedia
                                 <br>
                                 <i class="fas fa-sort-amount-up"></i></a>
 

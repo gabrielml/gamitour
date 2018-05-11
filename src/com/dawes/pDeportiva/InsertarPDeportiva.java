@@ -65,7 +65,7 @@ public class InsertarPDeportiva extends Accion {
 		String video = request.getParameter("video");
 		
 		Pruebadeportiva pDeportiva = new Pruebadeportiva(parada, nombre, fechaInicioDate, fechaFinDate, explicacion, puntos, multimedias, pdf, video);
-		
+		//Pruebadeportiva pDeportiva = new Pruebadeportiva();
 		su.insertar(pDeportiva);
 		
 		return "index.html";

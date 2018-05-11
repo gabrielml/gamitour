@@ -51,6 +51,22 @@ public class Itinerario implements java.io.Serializable {
 		this.ubicacion = ubicacion;
 		this.paradas = paradas;
 	}
+	public Itinerario(Integer iditinerario, String nombre, String categoria, String duracion, String ubicacion, Set<Parada> paradas) {
+		this.iditinerario = iditinerario;
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.duracion = duracion;
+		this.ubicacion = ubicacion;
+		this.paradas = paradas;
+	}
+	public Itinerario(Integer iditinerario, String nombre, String categoria, String duracion, String ubicacion) {
+		this.iditinerario = iditinerario;
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.duracion = duracion;
+		this.ubicacion = ubicacion;
+	
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

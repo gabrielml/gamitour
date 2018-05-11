@@ -21,6 +21,7 @@ pageEncoding="ISO-8859-1"%>
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
+                        	<th>ID <i class="fas fa-sort"></th>
                             <th>NOMBRE <i class="fas fa-sort"></th>
                             <th>PREGUNTA <i class="fas fa-sort"></th>
                             <th>RESPUESTA <i class="fas fa-sort"></th>
@@ -31,16 +32,17 @@ pageEncoding="ISO-8859-1"%>
                     <tbody>
                         <c:forEach items="${listado}" var="unaPCultural">	
 	                    <tr>
-                            <td>${unaPCultural[1]}</td>
-                            <td>${unaPCultural[2]}</td>
-                            <td>${unaPCultural[3]}</td>
-                            <td>${unaPCultural[4]}</td>
-                            <td>${unaPCultural[5]}</td>
+	                    	<td>${unaPCultural.idpruebacultural}</td>
+                            <td>${unaPCultural.parada.numeroParada}</td>
+                            <td>${unaPCultural.nombre}</td>
+                            <td>${unaPCultural.pregunta}</td>
+                            <td>${unaPCultural.respuesta}</td>
+                            <td>${unaPCultural.puntos}</td>
 		                    <td>
-                                <a id="icono" href="BorrarPCultural.do?nombrePCulturalBorrar=${unaPCultural[1]}"><i class="fas fa-trash-alt"></i></a>
+                                <a id="icono" href="BorrarPCultural.do?nombrePCulturalBorrar=${unaPCultural.nombre}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td>
-                                    <a id="icono" href="contenido/pCulturales/ModificarPCultural.jsp?idpruebacultural=${unaPCultural[0]}&nombre=${unaPCultural[1]}&pregunta=${unaPCultural[2]}&respuesta=${unaPCultural[3]}&puntos=${unaPCultural[4]}&parada=${unaPCultural[5]}"><i class="far fa-edit"></i></a>
+                                    <a id="icono" href="contenido/pCulturales/ModificarPCultural.jsp?idpruebacultural=${unaPCultural.idpruebacultural}&nombre=${unaPCultural.nombre}&pregunta=${unaPCultural.pregunta}&respuesta=${unaPCultural.respuesta}&puntos=${unaPCultural.puntos}&parada=${unaPCultural.parada.numeroParada}"><i class="far fa-edit"></i></a>
                                 </td>
                         </tr>
                         </c:forEach>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -107,8 +108,24 @@ width: 100%;
 
 <table>
 
-<tr><td>Nick del cliente : </td><td><input type="text" name="nick"></td></tr>
-<tr><td>Titulo multimedia : </td><td><input type="text" name="titulo"></td></tr>
+<tr><td>Nick del cliente : </td>
+<td>
+<select name="nick">
+	<c:forEach items="${listClie}" var="clie">
+		 <option value="${clie.nick}">${clie.nick}</option>
+	</c:forEach>
+</select>
+
+</td></tr>
+<tr><td>Titulo multimedia : </td><td>
+
+<select name="titulo">
+	<c:forEach items="${listMulti}" var="mutl">
+		 <option value="${mutl.titulo}">${mutl.titulo}</option>
+	</c:forEach>
+</select>
+
+</td></tr>
  <tr><td>Texto : </td>
  <!-- <input type="text" name="texto"> -->
  <td><textarea rows="6" cols="40" maxlength="200"  name="texto" ></textarea></td></tr>

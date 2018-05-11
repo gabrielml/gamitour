@@ -43,6 +43,12 @@ public class Voto implements java.io.Serializable {
 		this.multimedia = multimedia;
 		this.puntos = puntos;
 	}
+	public Voto(int idvoto, Integer puntos, Cliente cliente, Multimedia multimedia) {
+		this.idvoto = idvoto;
+		this.cliente = cliente;
+		this.multimedia = multimedia;
+		this.puntos = puntos;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

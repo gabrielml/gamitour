@@ -21,6 +21,7 @@
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
+                        	<th>ID <i class="fas fa-sort"></th>
                             <th>NOMBRE <i class="fas fa-sort"></th>
                             <th>CATEGORIA <i class="fas fa-sort"></th>
                             <th>DURACION <i class="fas fa-sort"></th>
@@ -30,19 +31,20 @@
                     <tbody>
                         <c:forEach items="${listado}" var="unItinerario">	
 	                    <tr>
-                            <td>${unItinerario[1]}</td>
-                            <td>${unItinerario[2]}</td>
-                            <td>${unItinerario[3]}</td>
-                            <td>${unItinerario[4]}</td>
+                            <td>${unItinerario.iditinerario}</td>
+                            <td>${unItinerario.nombre}</td>
+                            <td>${unItinerario.categoria}</td>
+                            <td>${unItinerario.duracion}</td>
+                             <td>${unItinerario.ubicacion}</td>
                            
                             <td>
-                                <a id="icono" href="BorrarItinerario.do?idBorrar=${unItinerario[1]}"><i class="fas fa-trash-alt"></i></a>
+                                <a id="icono" href="BorrarItinerario.do?idBorrar=${unItinerario.nombre}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td>
-                                    <a id="icono" href="contenido/itinerarios/ModificarItinerarios.jsp?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}&categoria=${unItinerario[2]}&duracion=${unItinerario[3]}&ubicacion=${unItinerario[4]}"><i class="far fa-edit"></i></a>
+                                    <a id="icono" href="contenido/itinerarios/ModificarItinerarios.jsp?iditinerario=${unItinerario.iditinerario}&nombre=${unItinerario.nombre}&categoria=${unItinerario.categoria}&duracion=${unItinerario.duracion}&ubicacion=${unItinerario.ubicacion}"><i class="far fa-edit"></i></a>
                                 </td>
                                  <td>
-                                <a title="Ver paradas" id="icono" href="MostrarParadasItinerario.do?iditinerario=${unItinerario[0]}&nombre=${unItinerario[1]}"><i  class="fas fa-bus"></i>
+                                <a title="Ver paradas" id="icono" href="MostrarParadasItinerario.do?iditinerario=${unItinerario.iditinerario}&nombre=${unItinerario.nombre}"><i  class="fas fa-bus"></i>
 
                                 </a>
                                 </td>

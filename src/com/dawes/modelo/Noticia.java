@@ -40,6 +40,14 @@ public class Noticia implements java.io.Serializable {
 	public Noticia(String nombre) {
 		this.nombre = nombre;
 	}
+	public Noticia(int idNoticia, String nombre, String texto, Date fechaalta, Date fechacaducidad, String imagen) {
+		this.idnoticia= idnoticia;
+		this.nombre = nombre;
+		this.texto = texto;
+		this.fechaalta = fechaalta;
+		this.fechacaducidad = fechacaducidad;
+		this.imagen = imagen;
+	}
 
 	public Noticia(String nombre, String texto, Date fechaalta, Date fechacaducidad, String imagen) {
 		this.nombre = nombre;

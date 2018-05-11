@@ -37,10 +37,11 @@ public class Controller extends HttpServlet {
 		String url=request.getServletPath();
 		//recuperamos la clase seleccionada por el cliente (quitamos el .do)
 		Accion accion = Accion.getAccion(url.substring(1,url.length()-3));
-		
+		System.out.println("quiere ir a :"+ url);
 		//creamos objeto con la informacion que devuelve ejecutar y ejecuto
 		//instaciamos el objeto con la informacion devuelta del metodo ejecutar
 		despachador = request.getRequestDispatcher(accion.ejecutar(request, response));
+		
 		//pasamos el metodo a la vista
 		despachador.forward(request, response);
 	}

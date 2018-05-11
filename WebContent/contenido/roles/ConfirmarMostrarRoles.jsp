@@ -34,7 +34,7 @@
 	<tr>
 		<td>${unRol.nombre}</td>
 		<td><a id="icono" href="BorrarRol.do?idBorrar=${unRol.nombre}"><i class="fas fa-trash-alt"></i></a></td>
-		<td><a id="icono" href="}"><i class="far fa-edit"></i></a></td>
+		<!-- <td><a id="icono" href="}"><i class="far fa-edit"></i></a></td>	-->
 	</tr>
 </c:forEach>
 </tbody>
@@ -45,12 +45,7 @@
 
              <div class="seccion">
                  
-                 <div class="cajamenu">
-                        <a href="contenido/roles/FormInsertarRol.jsp">Insertar Rol
-                                <br>
-                                <i class="fas fa-sort-amount-up"></i></a>
-
-                 </div>
+                
                  <div class="cajamenu">
                      <a href="/Demo_Web/index.html">Volver al Menú
                         <br>

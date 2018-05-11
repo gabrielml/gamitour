@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -108,7 +109,14 @@ width: 100%;
 <form action="../../InsertarPCultural.do" method="POST">
 
 <table>
-<tr><td>Numero de la parada asociada: </td><td><input type="text" name="numParada"></td></tr>
+<tr><td>Numero de la parada asociada: </td>
+<td>
+<select name="numParada">
+	<c:forEach items="${listparad}" var="para">
+		 <option value="${para.numeroParada}">${para.nombre}</option>
+	</c:forEach>
+</select>
+</td></tr>
 <tr><td>Nombre: </td><td><input type="text" name="nombre"></td></tr>
 <tr><td>Pregunta: </td><td><input type="text" name="pregunta"></td></tr>
 <tr><td>Respuesta: </td><td><input type="text" name="respuesta"></td></tr>

@@ -47,6 +47,15 @@ public class Pruebacultural implements java.io.Serializable {
 		this.respuesta = respuesta;
 		this.puntos = puntos;
 	}
+	
+	public Pruebacultural(Integer idpruebacultural, Parada parada, String nombre, String pregunta, String respuesta, Integer puntos) {
+		this.idpruebacultural = idpruebacultural;
+		this.parada = parada;
+		this.nombre = nombre;
+		this.pregunta = pregunta;
+		this.respuesta = respuesta;
+		this.puntos = puntos;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

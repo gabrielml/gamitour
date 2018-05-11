@@ -108,7 +108,8 @@ width: 100%;
 <form action="../../InsertarParada.do" method="POST">
 
 <table>
-<tr><td>Nombre del itinerario asociado: </td><td><input type="text" name="nomItinerario"></td></tr>
+<input type="hidden" name="nomItinerario" value="<%=request.getParameter("nombre")%>">
+<tr><td>Nombre del itinerario asociado: </td><td><%=request.getParameter("nombre")%></td></tr>
 <tr><td>Nombre: </td><td><input type="text" name="nomParada"></td></tr>
 <tr><td>Número: </td><td><input type="text" name="numParada"></td></tr>
 <tr><td>Ubicacion: </td><td><input type="text" name="ubicParada"></td></tr>

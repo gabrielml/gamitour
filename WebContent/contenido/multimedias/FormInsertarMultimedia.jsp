@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -103,12 +104,35 @@ width: 100%;
 
 <div class="contenido">
 
-<form action="../../InsertarMultimedias.do" method="POST">
+<form action="Demo_Web/InsertarMultimedias.do" method="POST">
 
 <table>
 
-<tr><td>Nick del cliente : </td><td><input type="text" name="nick"></td></tr>
-<tr><td>Nombre de prueba deportiva : </td><td><input type="text" name="nombreparada"></td></tr>
+<tr><td>Nick del cliente : </td>
+<td>
+ 
+<select name="nick">
+	<c:forEach items="${listado}" var="clie">
+		 <option value="${clie.nick}">${clie.nick}</option>
+	</c:forEach>
+</select>
+</td></tr>
+
+<tr><td>Nombre de prueba deportiva : </td>
+<td>
+
+<select name="titulo">
+	<c:forEach items="${listPD}" var="pd">
+		 <option value="${pd.nombre}">${pd.nombre}</option>
+	</c:forEach>
+</select>
+</td></tr>
+
+
+
+
+
+
 <tr><td>Comentario : </td><td><input type="text" name="comentario" maxlength="60"></td></tr>
 <tr><td>Imagen : </td><td><input type="text" name="imagen"></td></tr>
 <tr><td>Video : </td><td><input type="text" name="video"></td></tr>
@@ -123,7 +147,7 @@ width: 100%;
     <div class="boton">
 <input class="button" type="submit" value="Insertar">
 <input class="button" type="reset" value="Limpiar">
-<a href="/Demo_Web/index.html"><input class="button" type="button" value="Volver"></a>
+<a href="Demo_Web/index.html"><input class="button" type="button" value="Volver"></a>
 
 </div>
 

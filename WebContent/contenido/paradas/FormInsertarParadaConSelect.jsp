@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>InsertarParada</title>
 <style type="text/css">
 
     body{
@@ -94,37 +95,43 @@ width: 100%;
     </style>
 </head>
 <body>
+
+
+
 <p class="titulo">GAMITOUR</p>
         
   
 <div class="cabecera">
-        <a class="titcabecera">MODIFICAR USUARIOS</a>
+        <a class="titcabecera">INSERTAR PARADA</a>
    </div>
 
 <div class="contenido">
-
-<form action="../../ModificarUsuarios.do">
+<form action="/InsertarParadaSelect.do" method="POST">
 
 <table>
+<tr><td>Nombre del itinerario asociado select: </td>
+<td>
 
-
-
-<tr><td>Nombre : </td><td><input type="text" value="<%=request.getParameter("nombre")  %>" name="nombreNuevo"></td></tr>
-<tr><td>Apellidos : </td><td><input type="text" value="<%=request.getParameter("apellidos")%>"  name="apellidosNuevo"></td></tr>
-<tr><td>Email : </td><td><input type="text" value="<%=request.getParameter("email")%>" name="emailNuevo"></td></tr>
-<tr><td>Nick : </td><td><input type="hidden" value="<%=request.getParameter("nick")%>" name="nick"></td></tr>	
-<tr><td>Password :</td><td> <input type="password"value="<%=request.getParameter("password")%>" name="passwordNuevo"></td></tr>
-<tr><td>Fecha de nacimiento (año-me-dia): </td><td><input type="text" value="<%=request.getParameter("fechanacimiento")%>" name="fechaNacimientoNuevo"></td></tr>
-<tr><td>Teléfono : </td><td><input type="text" value="<%=request.getParameter("telefono")%>" name="telefonoNuevo"></td></tr>
-<tr><td>Dirección : </td><td><input type="text" value="<%=request.getParameter("direccion")%>" name="direccionNuevo"></td></tr>
-<tr><td>Código postal : </td><td><input type="text" value="<%=request.getParameter("codigoPostal")%>" name="cpNuevo"></td></tr>
-
+<select name="nomItinerario">
+	<c:forEach items="${lista}" var="it">
+		 <option value="${it.nombre}">${it.nombre}</option>
+	</c:forEach>
+</select>
+</td>
+</tr>
+<tr><td>Nombre: </td><td><input type="text" name="nomParada"></td></tr>
+<tr><td>Número: </td><td><input type="text" name="numParada"></td></tr>
+<tr><td>Ubicacion: </td><td><input type="text" name="ubicParada"></td></tr>
+<tr><td>Historia: </td><td><textarea rows="6" cols="40" name="histParada" maxlength="200"></textarea></td></tr>
+<tr><td>Anecdotario: </td><td><textarea rows="6" cols="40" name="anecParada" maxlength="200"></textarea></td></tr>
+<tr><td>Gastronomía: </td><td><textarea rows="6" cols="40" name="gastroParada" maxlength="200"></textarea></td></tr>
+<tr><td>Imagen: </td><td><input type="text" name="imgParada"></td></tr>
 
 </table>	
 <div class="botones">
      
     <div class="boton">
-<input class="button" type="submit" value="Modificar">
+<input class="button" type="submit" value="Insertar">
 <input class="button" type="reset" value="Limpiar">
 <a href="/Demo_Web/index.html"><input class="button" type="button" value="Volver"></a>
 

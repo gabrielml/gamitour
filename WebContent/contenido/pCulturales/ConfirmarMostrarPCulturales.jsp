@@ -21,26 +21,29 @@ pageEncoding="ISO-8859-1"%>
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
+                        	<th>ID <i class="fas fa-sort"></th>
+                        	 <th>NOMBRE DE PARADA <i class="fas fa-sort"></th>
                             <th>NOMBRE <i class="fas fa-sort"></th>
                             <th>PREGUNTA <i class="fas fa-sort"></th>
                             <th>RESPUESTA <i class="fas fa-sort"></th>
                             <th>PUNTOS <i class="fas fa-sort"></th>
-                            <th>NUMERO DE PARADA <i class="fas fa-sort"></th>
+                           
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach items="${listado}" var="unaPCultural">	
 	                    <tr>
-                            <td>${unaPCultural[1]}</td>
-                            <td>${unaPCultural[2]}</td>
-                            <td>${unaPCultural[3]}</td>
-                            <td>${unaPCultural[4]}</td>
-                            <td>${unaPCultural[5]}</td>
+	                    	<td>${unaPCultural.idpruebacultural}</td>
+                            <td>${unaPCultural.parada.nombre}</td>
+                            <td>${unaPCultural.nombre}</td>
+                            <td>${unaPCultural.pregunta}</td>
+                            <td>${unaPCultural.respuesta}</td>
+                            <td>${unaPCultural.puntos}</td>
 		                    <td>
-                                <a id="icono" href="BorrarPCultural.do?nombrePCulturalBorrar=${unaPCultural[1]}"><i class="fas fa-trash-alt"></i></a>
+                                <a id="icono" href="BorrarPCultural.do?nombrePCulturalBorrar=${unaPCultural.nombre}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                                 <td>
-                                    <a id="icono" href="contenido/pCulturales/ModificarPCultural.jsp?idpruebacultural=${unaPCultural[0]}&nombre=${unaPCultural[1]}&pregunta=${unaPCultural[2]}&respuesta=${unaPCultural[3]}&puntos=${unaPCultural[4]}&parada=${unaPCultural[5]}"><i class="far fa-edit"></i></a>
+                                    <a id="icono" href="contenido/pCulturales/ModificarPCultural.jsp?idpruebacultural=${unaPCultural.idpruebacultural}&nombre=${unaPCultural.nombre}&pregunta=${unaPCultural.pregunta}&respuesta=${unaPCultural.respuesta}&puntos=${unaPCultural.puntos}&parada=${unaPCultural.parada.idparada}"><i class="far fa-edit"></i></a>
                                 </td>
                         </tr>
                         </c:forEach>
@@ -49,7 +52,7 @@ pageEncoding="ISO-8859-1"%>
             </div>
             <div class="seccion">
                 <div class="cajamenu">
-                    <a href="contenido/pCulturales/FormInsertarPCultural.jsp">Insertar P.Cultural
+                    <a href="InsertarPCulturalConSelect.do">Insertar P.Cultural
                     <br>
                     <i class="fas fa-sort-amount-up"></i></a>
                 </div>

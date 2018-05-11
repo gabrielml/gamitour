@@ -14,14 +14,14 @@ import com.dawes.service.ServiceGenericDAO;
 import com.dawes.serviceImp.ServiceGenericDAOImp;
 import com.dawes.util.Accion;
 
-public class InsertarParadaAccion extends Accion {
+public class InsertarParadaAccionSelect extends Accion {
 
 	@Override
 	public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
-	
-		System.out.println("el nombre del itinerario es :"+ request.getParameter("nomItinerario"));
+		System.out.println(request.getParameter("nomParada"));
+		System.out.println("el nombre del itinerario es :"+ request.getAttribute("nomItinerario"));
 	
 		Itinerario itinerario =(Itinerario)su.getDetalleItinerario(request.getParameter("nomItinerario"));
 		String nombre = request.getParameter("nomParada");
