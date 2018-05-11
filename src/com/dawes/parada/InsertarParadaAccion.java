@@ -38,6 +38,12 @@ public class InsertarParadaAccion extends Accion {
 		
 		Parada parada = new Parada(itinerario, nombre, numeroParadaInt, ubicacion, historia, anecdotario, gastronomia, imagen, pruebaculturals, pruebadeportivas);
 		
+		Set<Parada> itinerarioParadas = itinerario.getParadas();
+		itinerarioParadas.add(parada);
+		itinerario.setParadas(itinerarioParadas);
+		su.update(itinerario);
+		
+		
 		su.insertar(parada);
 		
 		return "index.html";

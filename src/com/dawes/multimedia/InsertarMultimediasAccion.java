@@ -42,6 +42,19 @@ public class InsertarMultimediasAccion extends Accion{
 	
 		Multimedia multimedia = new Multimedia(cliente,pruebadeportiva,new Date(),comentario,imagen,video,puntosacumulados,titulo,comentarios,votos);
 		
+		
+		Set<Multimedia> multiClie = cliente.getMultimedias();
+		multiClie.add(multimedia);
+		cliente.setMultimedias(multiClie);
+		su.update(cliente);
+		
+		Set<Multimedia> multiPd = pruebadeportiva.getMultimedias();
+		multiPd.add(multimedia);
+		pruebadeportiva.setMultimedias(multiPd);
+		su.update(pruebadeportiva);
+		
+		
+		
 		su.insertar(multimedia);
 		
 		return "index.html";

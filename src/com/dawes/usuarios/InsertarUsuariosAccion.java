@@ -62,6 +62,10 @@ public class InsertarUsuariosAccion extends Accion{
 		
 		Cliente usuario = new Cliente(rol,nombre,apellido,fecha,email,password,telefono,direccion,codigoPostal,avatar,puntos,fechaRegistro,nick,premios,votos,comentarios,actividades,multimedia);
 		
+		Set<Cliente> clienrol = rol.getClientes();
+		clienrol.add(usuario);
+		rol.setClientes(clienrol);
+		su.update(rol);
 		
 		su.insertar(usuario);
 		

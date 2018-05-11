@@ -3,6 +3,7 @@ package com.dawes.premio;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,8 +56,18 @@ public class InsertarPremioAccion extends Accion{
 		String puntos = request.getParameter("puntos");
 		Integer puntosInt = Integer.parseInt(puntos);
 		
+		
 		Premio premio = new Premio(cliente, nombre, descripcion, imagen, Fechaactivacion,fechaconsumo, puntosInt);
+		
 		su.insertar(premio);
+		
+		cliente.setPuntosacumulados(premio.getPuntos());
+		Set<Premio> premios = cliente.getPremios();
+		premios.add(premio);
+		cliente.setPremios(premios);
+		su.update(cliente);
+		
+		
 			
 		return "index.html";
 	}
