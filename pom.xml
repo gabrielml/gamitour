@@ -106,6 +106,14 @@
 			<version>1.1.1</version>
 		</dependency>
 		<!-- </GML-180507> -->
+		<!-- <GML-180511> -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>5.2.12.Final</version>
+		</dependency>
+		<!-- </GML-180511> -->
 	</dependencies>
 	<!-- ******************** ********************* ******************** -->
 </project>
