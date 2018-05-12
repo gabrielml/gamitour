@@ -26,15 +26,16 @@
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
 
-                        <tr>
-                            <th>NOMBRE <i class="fas fa-sort"></th>
-<th>FECHA DE INICIO <i class="fas fa-sort"></th>
-<th>FECHA DE FIN <i class="fas fa-sort"></th>
-<th>EXPLICACION <i class="fas fa-sort"></th>
-<th>PUNTOS <i class="fas fa-sort"></th>
-<th>NUMERO DE PARADA <i class="fas fa-sort"></th>
-<th>PDF <i class="fas fa-sort"></th>
-<th>VIDEO <i class="fas fa-sort"></th>
+            <tr>
+            <th>ID <i class="fas fa-sort"></th>
+            <th>NOMBRE <i class="fas fa-sort"></th>
+			<th>FECHA DE INICIO <i class="fas fa-sort"></th>
+			<th>FECHA DE FIN <i class="fas fa-sort"></th>
+			<th>EXPLICACION <i class="fas fa-sort"></th>
+			<th>PUNTOS <i class="fas fa-sort"></th>
+			<th>NUMERO DE PARADA <i class="fas fa-sort"></th>
+			<th>PDF <i class="fas fa-sort"></th>
+			<th>VIDEO <i class="fas fa-sort"></th>
 
 
 </tr>
@@ -42,19 +43,19 @@
 <tbody>
 <c:forEach items="${listado}" var="unaPDeportiva">	
 	<tr>
-		<td>${unaPDeportiva[1]}</td>
-		<td>${unaPDeportiva[2]}</td>
-		<td>${unaPDeportiva[3]}</td>
-		<td>${unaPDeportiva[4]}</td>
-		<td>${unaPDeportiva[5]}</td>
-		<td>${unaPDeportiva[6]}</td>
-		<td>${unaPDeportiva[7]}</td>
-		<td>${unaPDeportiva[8]}</td>
-		<td><a id="icono" href="BorrarPDeportiva.do?nombrePDeportivaBorrar=${unaPDeportiva[1]}"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                                <td>
-                                    <a id="icono" href="contenido/pDeportivas/ModificarPDeportiva.jsp?idpruebadeportiva=${unaPDeportiva[0]}&nombre=${unaPDeportiva[1]}&fechainicio=${unaPDeportiva[2]}&fechafin=${unaPDeportiva[3]}&explicacion=${unaPDeportiva[4]}&puntos=${unaPDeportiva[5]}&parada=${unaPDeportiva[6]}&pdf=${unaPDeportiva[7]}&video=${unaPDeportiva[8]}"><i class="far fa-edit"></i></a>
-                                </td>
+		<td>${unaPDeportiva.idpruebadeportiva}</td>
+		<td>${unaPDeportiva.nombre}</td>
+		<td>${unaPDeportiva.fechainicio}</td>
+		<td>${unaPDeportiva.fechafin}</td>
+		<td>${unaPDeportiva.explicacion}</td>
+		<td>${unaPDeportiva.puntos}</td>
+		<td>${unaPDeportiva.parada.numeroParada}</td>
+		<td>${unaPDeportiva.pdf}</td>
+		<td>${unaPDeportiva.video}</td>
+		<td><a id="icono" href="BorrarPDeportiva.do?nombrePDeportivaBorrar=${unaPDeportiva.nombre}"><i class="fas fa-trash-alt"></i></a></td>
+        <td>
+            <a id="icono" href="contenido/pDeportivas/ModificarPDeportiva.jsp?idpruebadeportiva=${unaPDeportiva.idpruebadeportiva}&nombre=${unaPDeportiva.nombre}&fechainicio=${unaPDeportiva.fechainicio}&fechafin=${unaPDeportiva.fechafin}&explicacion=${unaPDeportiva.explicacion}&puntos=${unaPDeportiva.puntos}&parada=${unaPDeportiva.parada.numeroParada}&pdf=${unaPDeportiva.pdf}&video=${unaPDeportiva.video}"><i class="far fa-edit"></i></a>
+        </td>
                         </tr>
                         </c:forEach>
                         </tbody>
@@ -65,7 +66,7 @@
             <div class="seccion">
 
                 <div class="cajamenu">
-                    <a href="contenido/pDeportivas/FormInsertarPDeportiva.jsp">Insertar P.Deportiva
+                    <a href="InsertarPDeportivaConSelect.do">Insertar P.Deportiva
                                 <br>
                                 <i class="fas fa-sort-amount-up"></i></a>
 

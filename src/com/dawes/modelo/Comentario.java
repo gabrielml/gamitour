@@ -40,8 +40,14 @@ public class Comentario implements java.io.Serializable {
 		this.cliente = cliente;
 		this.multimedia = multimedia;
 	}
-
+	
 	public Comentario(Cliente cliente, Multimedia multimedia, String texto) {
+		this.cliente = cliente;
+		this.multimedia = multimedia;
+		this.texto = texto;
+	}
+	public Comentario(int idcomentario, String texto, Cliente cliente, Multimedia multimedia) {
+		this.idcomentario = idcomentario;
 		this.cliente = cliente;
 		this.multimedia = multimedia;
 		this.texto = texto;

@@ -21,8 +21,9 @@ public class InsertarParadaAccion extends Accion {
 		// TODO Auto-generated method stub
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 	
+		System.out.println("el nombre del itinerario es :"+ request.getParameter("nomItinerario"));
+	
 		Itinerario itinerario =(Itinerario)su.getDetalleItinerario(request.getParameter("nomItinerario"));
-		
 		String nombre = request.getParameter("nomParada");
 		String numeroParada = request.getParameter("numParada");
 		Integer numeroParadaInt = Integer.parseInt(numeroParada);
@@ -36,6 +37,12 @@ public class InsertarParadaAccion extends Accion {
 		Set<Pruebadeportiva> pruebadeportivas = new HashSet<Pruebadeportiva>(0);
 		
 		Parada parada = new Parada(itinerario, nombre, numeroParadaInt, ubicacion, historia, anecdotario, gastronomia, imagen, pruebaculturals, pruebadeportivas);
+		
+		Set<Parada> itinerarioParadas = itinerario.getParadas();
+		itinerarioParadas.add(parada);
+		itinerario.setParadas(itinerarioParadas);
+		su.update(itinerario);
+		
 		
 		su.insertar(parada);
 		

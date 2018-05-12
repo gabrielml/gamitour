@@ -58,6 +58,17 @@ public class Premio implements java.io.Serializable {
 		this.fechaconsumo = fechaconsumo;
 		this.puntos = puntos;
 	}
+	public Premio(Integer idpremio,String nombre,   String descripcion, String imagen, Date fechaactivacion,
+			Date fechaconsumo, Integer puntos, Cliente cliente) {
+		this.idpremio = idpremio;
+		this.cliente = cliente;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.imagen = imagen;
+		this.fechaactivacion = fechaactivacion;
+		this.fechaconsumo = fechaconsumo;
+		this.puntos = puntos;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

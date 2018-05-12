@@ -43,18 +43,18 @@
                     <tbody>
                         <c:forEach items="${listado}" var="unaActividad">
                             <tr>
-                                <td>${unaActividad[0]}</td>
-                                <td>${unaActividad[1]}</td>
-                                <td>${unaActividad[2]}</td>
-                                <td>${unaActividad[3]}</td>
-                                <td>${unaActividad[4]}</td>
-                                <td>${unaActividad[5]}</td>
-                                <td>${unaActividad[6]}</td>
-                                <td>${unaActividad[7]}</td>
-                                <td>${unaActividad[8]}</td>
-                                <td><a id="icono" href="BorrarActividad.do?idBorrar=${unaActividad[1]}"><i class="fas fa-trash-alt"></i></a></td>
+                                <td>${unaActividad.idactividad}</td>
+                                <td>${unaActividad.nombre}</td>
+                                <td>${unaActividad.fechainicio}</td>
+                                <td>${unaActividad.fechafin}</td>
+                                <td>${unaActividad.ubicacion}</td>
+                                <td>${unaActividad.numparticipantes}</td>
+                                <td>${unaActividad.precio}</td>
+                                <td>${unaActividad.imagen}</td>
+                                <td>${unaActividad.puntos}</td>
+                                <td><a id="icono" href="BorrarActividad.do?idBorrar=${unaActividad.nombre}"><i class="fas fa-trash-alt"></i></a></td>
                                 <td>
-                                    <a id="icono" href="contenido/actividades/ModificarActividades.jsp?idactividad=${unaActividad[0]}&nombre=${unaActividad[1]}&fechaInicio=${unaActividad[2]}&fechaFin=${unaActividad[3]}&ubicacion=${unaActividad[4]}&numParticipantes=${unaActividad[5]}&precio=${unaActividad[6]}&imagen=${unaActividad[7]}&puntos=${unaActividad[8]}"><i class="far fa-edit"></i></a>
+                                    <a id="icono" href="contenido/actividades/ModificarActividades.jsp?idactividad=${unaActividad.idactividad}&nombre=${unaActividad.nombre}&fechaInicio=${unaActividad.fechainicio}&fechaFin=${unaActividad.fechafin}&ubicacion=${unaActividad.ubicacion}&numParticipantes=${unaActividad.numparticipantes}&precio=${unaActividad.precio}&imagen=${unaActividad.imagen}&puntos=${unaActividad.puntos}"><i class="far fa-edit"></i></a>
                                 </td>
 
                             </tr>

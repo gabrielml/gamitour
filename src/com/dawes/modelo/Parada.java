@@ -63,6 +63,21 @@ public class Parada implements java.io.Serializable {
 		this.pruebaculturals = pruebaculturals;
 		this.pruebadeportivas = pruebadeportivas;
 	}
+	public Parada(Integer idparada, Itinerario itinerario, String nombre, int numeroParada, String ubicacion, String historia,
+			String anecdotario, String gastronomia, String imagen) {
+		this.idparada = idparada;
+		this.itinerario = itinerario;
+		this.nombre = nombre;
+		this.numeroParada = numeroParada;
+		this.ubicacion = ubicacion;
+		this.historia = historia;
+		this.anecdotario = anecdotario;
+		this.gastronomia = gastronomia;
+		this.imagen = imagen;
+		
+	}
+	
+
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

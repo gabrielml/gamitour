@@ -21,7 +21,9 @@ pageEncoding="ISO-8859-1"%>
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
-                            <th>NOMBRE <i class="fas fa-sort"></th>
+                        <th>ID <i class="fas fa-sort"></th>
+                        <th>ITINERARIO <i class="fas fa-sort"></th>
+                        <th>NOMBRE <i class="fas fa-sort"></th>
                         <th>NUMERO PARADA <i class="fas fa-sort"></th>
                         <th>UBICACION <i class="fas fa-sort"></th>
                         <th>HISTORIA <i class="fas fa-sort"></th>
@@ -32,20 +34,23 @@ pageEncoding="ISO-8859-1"%>
                 </thead>
                 <tbody>
                     <c:forEach items="${listado}" var="unaParada">	
-	                <tr>		
-		                <td>${unaParada[1]}</td>
-                        <td>${unaParada[2]}</td>
-                        <td>${unaParada[3]}</td>
-                        <td>${unaParada[4]}</td>
-                        <td>${unaParada[5]}</td>
-                        <td>${unaParada[6]}</td>
-                        <td>${unaParada[7]}</td>
+	                <tr>
+	                	<td>${unaParada.idparada}</td>
+		                <td>${unaParada.itinerario.nombre}</td>
+                        <td>${unaParada.nombre}</td>
+                        <td>${unaParada.numeroParada}</td>
+                        <td>${unaParada.ubicacion}</td>
+                        <td>${unaParada.historia}</td>
+                        <td>${unaParada.anecdotario}</td>
+                        <td>${unaParada.gastronomia}</td>
+                        <td>${unaParada.imagen}</td>
 		                <td>
-                            <a id="icono" href="BorrarParada.do?numParadaBorrar=${unaParada[2]}"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                                <td>
-                                    <a id="icono" href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada[0]}&nombre=${unaParada[1]}&numeroParada=${unaParada[2]}&ubicacion=${unaParada[3]}&historia=${unaParada[4]}&anecdotario=${unaParada[5]}&gastronomia=${unaParada[6]}&imagen=${unaParada[7]}&itinerario=${unaParada[8]}"><i class="far fa-edit"></i></a>
-                                </td>
+		                <a id="icono" href="BorrarParada.do?numParadaBorrar=${unaParada.numeroParada}"><i class="fas fa-trash-alt"></i></a>
+                       	</td>
+                        <td>
+                        <a id="icono" href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada.idparada}&nombre=${unaParada.nombre}&numeroParada=${unaParada.numeroParada}&ubicacion=${unaParada.ubicacion}&historia=${unaParada.historia}&anecdotario=${unaParada.anecdotario}&gastronomia=${unaParada.gastronomia}&imagen=${unaParada.imagen}&itinerario=${unaParada.itinerario.nombre}"><i class="far fa-edit"></i></a>
+                        </td>
+                        
                         </tr>
                         </c:forEach>
                         </tbody>
@@ -53,7 +58,7 @@ pageEncoding="ISO-8859-1"%>
             </div>
             <div class="seccion">
                 <div class="cajamenu">
-                    <a href="contenido/paradas/FormInsertarParada.jsp">Insertar Parada
+                    <a href="ParadaSelect.do">Insertar Parada
                 <br>
                 <i class="fas fa-sort-amount-up"></i></a>
                 </div>

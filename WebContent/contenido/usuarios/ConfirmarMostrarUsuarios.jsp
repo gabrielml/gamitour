@@ -46,22 +46,24 @@
 <tbody>
 <c:forEach items="${listado}" var="unCliente">
 <tr>
-	<td>${unCliente[0]}</td>
-	<td>${unCliente[1]}</td>
-	<td>${unCliente[2]}</td>
-	<td>${unCliente[3]}</td>
-	<td>${unCliente[4]}</td>
-	<td>${unCliente[5]}</td>
-	<td>${unCliente[6]}</td>
-	<td>${unCliente[7]}</td>
-	<td>${unCliente[8]}</td>
-	<td>${unCliente[9]}</td>
-	<td>${unCliente[10]}</td>
-	<td>${unCliente[11]}</td>
-	<td>${unCliente[12]}</td>
-	<td>${unCliente[13]}</td>
-	<td><a id="icono" href="BorrarUsuario.do?idBorrar=${unCliente[13]}"><i class="fas fa-trash-alt"></i></a></td>
-	<td><a id="icono" href="contenido/usuarios/ModificarUsuarios.jsp?idcliente=${unCliente[0]}&nombre=${unCliente[1]}&apellidos=${unCliente[2]}&fechanacimiento=${unCliente[3]}&email=${unCliente[4]}&password=${unCliente[5]}&telefono=${unCliente[6]}&direccion=${unCliente[7]}&codigoPostal=${unCliente[8]}&avatar=${unCliente[9]}&puntosAcumulados=${unCliente[10]}&fechaRegistro=${unCliente[11]}&nick=${unCliente[13]}"><i class="far fa-edit"></i></a></td>
+
+	<td>${unCliente.idcliente}</td>
+	<td>${unCliente.nombre}</td>
+	<td>${unCliente.apellidos}</td>
+	<td>${unCliente.fechanacimiento}</td>
+	<td>${unCliente.email}</td>
+	<td>${unCliente.password}</td>
+	<td>${unCliente.telefono}</td>
+	<td>${unCliente.direccion}</td>
+	<td>${unCliente.codigopostal}</td>
+	<td>${unCliente.avatar}</td>
+	<td>${unCliente.puntosacumulados}</td>
+	<td>${unCliente.fecharegistro}</td>
+	<td>${unCliente.nick}</td>
+	
+	<td><a id="icono" href="BorrarUsuario.do?idBorrar=${unCliente.nick}"><i class="fas fa-trash-alt"></i></a></td>
+	<td><a id="icono" href="contenido/usuarios/ModificarUsuarios.jsp?idcliente=${unCliente.idcliente}&nombre=${unCliente.nombre}&apellidos=${unCliente.apellidos}&fechanacimiento=${unCliente.fechanacimiento}&email=${unCliente.email}&password=${unCliente.password}&telefono=${unCliente.telefono}&direccion=${unCliente.direccion}&codigoPostal=${unCliente.codigopostal}&avatar=${unCliente.avatar}&puntosAcumulados=${unCliente.puntosacumulados}&fechaRegistro=${unCliente.fecharegistro}&nick=${unCliente.nick}"><i class="far fa-edit"></i></a></td>
+	
 	
 </tr>
 </c:forEach>

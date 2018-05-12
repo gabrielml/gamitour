@@ -10,6 +10,7 @@ import com.dawes.actividades.MostrarActividadAccion;
 import com.dawes.actividades.MostrarActividadesAccion;
 import com.dawes.comentario.BorrarComentarioAccion;
 import com.dawes.comentario.InsertarComentariosAccion;
+import com.dawes.comentario.InsertarComentariosConSelectAccion;
 import com.dawes.comentario.ModificarComentariosAccion;
 import com.dawes.comentario.MostrarComentarioAccion;
 import com.dawes.comentario.MostrarComentariosAccion;
@@ -20,6 +21,7 @@ import com.dawes.itinerario.MostrarItinerarioAccion;
 import com.dawes.itinerario.MostrarItinerariosAccion;
 import com.dawes.multimedia.BorrarMultimediaAccion;
 import com.dawes.multimedia.InsertarMultimediasAccion;
+import com.dawes.multimedia.InsertarMultimediasConSelectAccion;
 import com.dawes.multimedia.ModificarMultimediasAccion;
 import com.dawes.multimedia.MostrarMultimediaAccion;
 import com.dawes.multimedia.MostrarMultimediasAccion;
@@ -29,17 +31,21 @@ import com.dawes.noticia.MostrarNoticiaAccion;
 import com.dawes.noticia.MostrarNoticiasAccion;
 import com.dawes.pCultural.BorrarPCulturalAccion;
 import com.dawes.pCultural.InsertarPCultural;
+import com.dawes.pCultural.InsertarPCulturalConSelect;
 import com.dawes.pCultural.ModificarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalAccion;
 import com.dawes.pCultural.MostrarPCulturalesAccion;
 import com.dawes.pCultural.MostrarPCulturalesParadaAccion;
 import com.dawes.pDeportiva.BorrarPDeportivaAccion;
 import com.dawes.pDeportiva.InsertarPDeportiva;
+import com.dawes.pDeportiva.InsertarPDeportivaConSelect;
 import com.dawes.pDeportiva.ModificarPDeportivaAccion;
 import com.dawes.pDeportiva.MostrarPDeportivaAccion;
 import com.dawes.pDeportiva.MostrarPDeportivasAccion;
 import com.dawes.parada.BorrarParadaAccion;
 import com.dawes.parada.InsertarParadaAccion;
+import com.dawes.parada.InsertarParadaAccionSelect;
+import com.dawes.parada.ParadaSelectAccion;
 import com.dawes.parada.ModificarParadasAccion;
 import com.dawes.parada.MostrarPDeportivasParadaAccion;
 import com.dawes.parada.MostrarParadaAccion;
@@ -47,6 +53,7 @@ import com.dawes.parada.MostrarParadasAccion;
 import com.dawes.parada.MostrarParadasItinerarioAccion;
 import com.dawes.premio.BorrarPremioAccion;
 import com.dawes.premio.InsertarPremioAccion;
+import com.dawes.premio.InsertarPremioConSelectAccion;
 import com.dawes.premio.MostrarPremioAccion;
 import com.dawes.premio.MostrarPremiosAccion;
 import com.dawes.rol.BorrarRolAccion;
@@ -60,9 +67,12 @@ import com.dawes.usuarios.MostrarUsuarioAccion;
 import com.dawes.usuarios.MostrarUsuariosAccion;
 import com.dawes.voto.BorrarVotoAccion;
 import com.dawes.voto.InsertarVotosAccion;
+import com.dawes.voto.InsertarVotosConSelectAccion;
 import com.dawes.voto.ModificarVotosAccion;
 import com.dawes.voto.MostrarVotoAccion;
 import com.dawes.voto.MostrarVotosAccion;
+
+import Seguridad.IniciarSessionAccion;
 
 
 public abstract class Accion {
@@ -95,6 +105,11 @@ public abstract class Accion {
 		if(tipo.equals("InsertarComentarios")){
 			return new InsertarComentariosAccion();
 		}
+		
+		if(tipo.equals("InsertarComentariosConSelect")){
+			return new InsertarComentariosConSelectAccion();
+		}
+	
 		if(tipo.equals("MostrarComentario")){
 			return new MostrarComentarioAccion();
 		}
@@ -130,6 +145,10 @@ public abstract class Accion {
 		if(tipo.equals("InsertarMultimedias")){
 			return new InsertarMultimediasAccion();
 		}
+		if(tipo.equals("InsertarMultimediasConSelect")){
+			return new InsertarMultimediasConSelectAccion();
+		}
+		
 		if(tipo.equals("MostrarMultimedia")){
 			return new MostrarMultimediaAccion();
 		}
@@ -161,6 +180,14 @@ public abstract class Accion {
 		if(tipo.equals("InsertarParada")) {
 			return new InsertarParadaAccion();
 		}
+		if(tipo.equals("InsertarParadaSelect")) {
+			
+			return new InsertarParadaAccionSelect();
+		}
+		
+		if(tipo.equals("ParadaSelect")) {
+			return new ParadaSelectAccion();
+		}
 		if(tipo.equals("MostrarParada")) {
 			return new MostrarParadaAccion();
 		}
@@ -180,6 +207,9 @@ public abstract class Accion {
 		/*PRUEBAS CULTURALES*/
 		if(tipo.equals("InsertarPCultural")) {
 			return new InsertarPCultural();
+		}
+		if(tipo.equals("InsertarPCulturalConSelect")) {
+			return new InsertarPCulturalConSelect();
 		}
 		if(tipo.equals("MostrarPCultural")) {
 			return new MostrarPCulturalAccion();
@@ -201,6 +231,9 @@ public abstract class Accion {
 		if(tipo.equals("InsertarPDeportiva")) {
 			return new InsertarPDeportiva();
 		}
+		if(tipo.equals("InsertarPDeportivaConSelect")) {
+			return new InsertarPDeportivaConSelect();
+		}
 		if(tipo.equals("MostrarPDeportiva")) {
 			return new MostrarPDeportivaAccion();
 		}
@@ -220,6 +253,9 @@ public abstract class Accion {
 		/*PREMIOS*/
 		if(tipo.equals("InsertarPremio")){
 			return new InsertarPremioAccion();
+		}
+		if(tipo.equals("InsertarPremioConSelect")){
+			return new InsertarPremioConSelectAccion();
 		}
 		if(tipo.equals("MostrarPremio")){
 			return new MostrarPremioAccion();
@@ -266,6 +302,9 @@ public abstract class Accion {
 		if(tipo.equals("InsertarVoto")){
 			return new InsertarVotosAccion();
 		}
+		if(tipo.equals("InsertarVotoConSelect")){
+			return new InsertarVotosConSelectAccion();
+		}
 		if(tipo.equals("MostrarVoto")){
 			return new MostrarVotoAccion();
 		}
@@ -279,6 +318,14 @@ public abstract class Accion {
 			return new ModificarVotosAccion();
 		}
 				
+		
+		/*INICIAR SESSION*/
+		if(tipo.equals("iniciarSesion")){
+			System.out.println("pasa por accion");
+			return new IniciarSessionAccion();
+		}
+		
+		
 		return null;
 	}
 }

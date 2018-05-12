@@ -43,10 +43,51 @@ public class Pruebadeportiva implements java.io.Serializable {
 				+ ", puntos=" + puntos + ", multimedias=" + multimedias + ", pdf=" + pdf + ", video=" + video + "]";
 	}
 
+	public Pruebadeportiva(Integer idpruebadeportiva, Parada parada, String nombre, Date fechainicio, Date fechafin,
+			String explicacion, Integer puntos,  String pdf, String video) {
+		super();
+		this.idpruebadeportiva = idpruebadeportiva;
+		this.parada = parada;
+		this.nombre = nombre;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.explicacion = explicacion;
+		this.puntos = puntos;
+		this.pdf = pdf;
+		this.video = video;
+	}
 	public Pruebadeportiva( Parada parada, String nombre, Date fechainicio, Date fechafin,
-			String explicacion, Integer puntos, Set<Multimedia> multimedias, String pdf, String video) {
+			String explicacion, Integer puntos,  String pdf, String video) {
 		super();
 		
+		this.parada = parada;
+		this.nombre = nombre;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.explicacion = explicacion;
+		this.puntos = puntos;
+		this.pdf = pdf;
+		this.video = video;
+	}
+
+	public Pruebadeportiva(Parada parada, String nombre, Date fechainicio, Date fechafin, String explicacion,
+			Integer puntos, Set<Multimedia> multimedias, String pdf, String video) {
+		super();
+		this.parada = parada;
+		this.nombre = nombre;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.explicacion = explicacion;
+		this.puntos = puntos;
+		this.multimedias = multimedias;
+		this.pdf = pdf;
+		this.video = video;
+	}
+
+	public Pruebadeportiva(Integer idpruebadeportiva, Parada parada, String nombre, Date fechainicio, Date fechafin,
+			String explicacion, Integer puntos, Set<Multimedia> multimedias, String pdf, String video) {
+		super();
+		this.idpruebadeportiva = idpruebadeportiva;
 		this.parada = parada;
 		this.nombre = nombre;
 		this.fechainicio = fechainicio;

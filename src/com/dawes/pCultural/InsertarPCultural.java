@@ -1,5 +1,7 @@
 package com.dawes.pCultural;
 
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,8 +22,8 @@ public class InsertarPCultural extends Accion {
 		
 		String numeroParada = request.getParameter("numParada");
 		Integer numParada = Integer.parseInt(numeroParada);
-		Parada parada = (Parada) su.getDetalleParada(numParada);
 		
+		Parada parada = (Parada) su.getDetalleParada(numParada);
 		
 		String nombre = request.getParameter("nombre");
 		
@@ -33,6 +35,12 @@ public class InsertarPCultural extends Accion {
 		
 		Pruebacultural pCultural = new Pruebacultural(parada, nombre, pregunta, respuesta, puntos);
 				
+		Set<Pruebacultural> pruebascparada = parada.getPruebaculturals();
+		pruebascparada.add(pCultural);
+		parada.setPruebaculturals(pruebascparada);
+		su.update(parada);
+		
+		
 		su.insertar(pCultural);
 		
 		return "index.html";

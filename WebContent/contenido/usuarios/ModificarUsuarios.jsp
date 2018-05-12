@@ -112,7 +112,7 @@ width: 100%;
 <tr><td>Nombre : </td><td><input type="text" value="<%=request.getParameter("nombre")  %>" name="nombreNuevo"></td></tr>
 <tr><td>Apellidos : </td><td><input type="text" value="<%=request.getParameter("apellidos")%>"  name="apellidosNuevo"></td></tr>
 <tr><td>Email : </td><td><input type="text" value="<%=request.getParameter("email")%>" name="emailNuevo"></td></tr>
-<tr><td>Nick : </td><td><input type="text" value="<%=request.getParameter("nick")%>" name="nick"></td></tr>
+<tr><td>Nick : </td><td><input type="hidden" value="<%=request.getParameter("nick")%>" name="nick"></td></tr>	
 <tr><td>Password :</td><td> <input type="password"value="<%=request.getParameter("password")%>" name="passwordNuevo"></td></tr>
 <tr><td>Fecha de nacimiento (año-me-dia): </td><td><input type="text" value="<%=request.getParameter("fechanacimiento")%>" name="fechaNacimientoNuevo"></td></tr>
 <tr><td>Teléfono : </td><td><input type="text" value="<%=request.getParameter("telefono")%>" name="telefonoNuevo"></td></tr>

@@ -71,6 +71,19 @@ public class Multimedia implements java.io.Serializable {
 		this.comentarios = comentarios;
 		this.votos = votos;
 	}
+	public Multimedia(Integer idmultimedia, Cliente cliente, Pruebadeportiva pruebadeportiva, Date fecha, String comentario, String imagen,
+			String video, Integer puntosacumulados, String titulo) {
+		this.idmultimedia = idmultimedia;
+		this.cliente = cliente;
+		this.pruebadeportiva = pruebadeportiva;
+		this.fecha = fecha;
+		this.comentario = comentario;
+		this.imagen = imagen;
+		this.video = video;
+		this.puntosacumulados = puntosacumulados;
+		this.titulo = titulo;
+		
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

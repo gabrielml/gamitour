@@ -25,8 +25,10 @@ public class InsertarMultimediasAccion extends Accion{
 
 		ServiceGenericDAO su = new ServiceGenericDAOImp();
 		 
+
+		
 		Cliente cliente = (Cliente)su.getDetalleCliente(request.getParameter("nick"));	
-		Pruebadeportiva pruebadeportiva = (Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("nombreparada"));	
+		Pruebadeportiva pruebadeportiva = (Pruebadeportiva)su.getDetallePruebaDeportiva(request.getParameter("titulo"));	
 		
 		
 		String comentario = request.getParameter("comentario");	
@@ -39,6 +41,19 @@ public class InsertarMultimediasAccion extends Accion{
 		Set<Voto> votos = new HashSet<Voto>(0);		
 	
 		Multimedia multimedia = new Multimedia(cliente,pruebadeportiva,new Date(),comentario,imagen,video,puntosacumulados,titulo,comentarios,votos);
+		
+		
+		Set<Multimedia> multiClie = cliente.getMultimedias();
+		multiClie.add(multimedia);
+		cliente.setMultimedias(multiClie);
+		su.update(cliente);
+		
+		Set<Multimedia> multiPd = pruebadeportiva.getMultimedias();
+		multiPd.add(multimedia);
+		pruebadeportiva.setMultimedias(multiPd);
+		su.update(pruebadeportiva);
+		
+		
 		
 		su.insertar(multimedia);
 		

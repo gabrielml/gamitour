@@ -30,17 +30,18 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			
-		
+		System.out.println("pasa por controller");
 		RequestDispatcher despachador = null;
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String url=request.getServletPath();
 		//recuperamos la clase seleccionada por el cliente (quitamos el .do)
 		Accion accion = Accion.getAccion(url.substring(1,url.length()-3));
-		
+		System.out.println("quiere ir a :"+ url);
 		//creamos objeto con la informacion que devuelve ejecutar y ejecuto
 		//instaciamos el objeto con la informacion devuelta del metodo ejecutar
 		despachador = request.getRequestDispatcher(accion.ejecutar(request, response));
+		
 		//pasamos el metodo a la vista
 		despachador.forward(request, response);
 	}

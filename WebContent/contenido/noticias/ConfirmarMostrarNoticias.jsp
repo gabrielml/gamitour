@@ -24,7 +24,7 @@
 <table style="margin:  auto;" id="tabla" class="tablesorter">
  <thead>
 <tr>
-<tr><th>ID <i class="fas fa-sort"></th>
+<tr><!-- <th>ID <i class="fas fa-sort"></th> 	-->
 <th>NOMBRE <i class="fas fa-sort"></th>
 <th>TEXTO <i class="fas fa-sort"></th>
 <th>FECHA ALTA <i class="fas fa-sort"></th>
@@ -35,14 +35,17 @@
 <tbody>
 <c:forEach items="${listado}" var="unaNoticia">	
 	<tr>
-		<td>${unaNoticia[0]}</td>
-		<td>${unaNoticia[1]}</td>
-		<td>${unaNoticia[2]}</td>
-		<td>${unaNoticia[3]}</td>
-		<td>${unaNoticia[4]}</td>
-		<td>${unaNoticia[5]}</td>
-		<td><a id="icono" href="BorrarNoticia.do?idBorrar=${unaNoticia[1]}"><i class="fas fa-trash-alt"></i></a></td>
-		<td><a id="icono" href="BorrarNoticia.do?idBorrar=${unaNoticia[1]}"><i class="far fa-edit"></i></a></td>
+		
+	<!-- <td>${unaNoticia.idnoticia}</td>	-->
+	<td>${unaNoticia.nombre}</td>
+	<td>${unaNoticia.texto}</td>
+	<td>${unaNoticia.fechaalta}</td>
+	<td>${unaNoticia.fechacaducidad}</td>
+	<td>${unaNoticia.imagen}</td>
+
+	<td><a id="icono" href="BorrarNoticia.do?idBorrar=${unaNoticia.nombre}"><i class="fas fa-trash-alt"></i></a></td>
+	<td><a id="icono" href="???.do?idBorrar=${unaNoticia.nombre}"><i class="far fa-edit"></i></a></td>
+	
 	</tr>
 </c:forEach>
 </tbody>

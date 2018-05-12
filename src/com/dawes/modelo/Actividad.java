@@ -67,6 +67,20 @@ public class Actividad implements java.io.Serializable {
 		this.puntos = puntos;
 		this.clientes = clientes;
 	}
+	
+	public Actividad(Integer idactividad, String nombre, Date fechainicio, Date fechafin, String ubicacion, Integer numparticipantes,
+			Float precio, String imagen, Integer puntos) {
+		this.idactividad = idactividad;
+		this.nombre = nombre;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.ubicacion = ubicacion;
+		this.numparticipantes = numparticipantes;
+		this.precio = precio;
+		this.imagen = imagen;
+		this.puntos = puntos;
+		
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
