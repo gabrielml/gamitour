@@ -21,13 +21,13 @@
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
-                    <th>ID <i class="fas fa-sort"></th>
+                            <th>ID <i class="fas fa-sort"></th>
                     <th>NOMBRE <i class="fas fa-sort"></th>
                     <th>FECHA DE INICIO <i class="fas fa-sort"></th>
                     <th>FECHA DE FIN <i class="fas fa-sort"></th>
-                    <th>EXPLICACION <i class="fas fa-sort"></th>
+                    <th>EXPLICACI&Oacute;N <i class="fas fa-sort"></th>
                     <th>PUNTOS <i class="fas fa-sort"></th>
-                    <th>NUMERO DE PARADA <i class="fas fa-sort"></th>
+                    <th>N&Uacute;MERO DE PARADA <i class="fas fa-sort"></th>
                     <th>PDF <i class="fas fa-sort"></th>
                     <th>VIDEO <i class="fas fa-sort"></th>
                 </tr>
@@ -62,12 +62,13 @@
             <i class="fas fa-sort-amount-up"></i></a>
                 </div>
                 <div class="cajamenu">
-                    <a href="/Demo_Web/index.html">Volver al Menu
+                    <a href="../index.html">Volver al Men&uacute;
             <br>
             <i class="fas fa-undo"></i></a></div>
-                <div>
-                    <input type="submit" value="Volver Atras" onclick="history.back()" />
-                </div>
+                <div class="cajamenu">
+                    <a href="../../MostrarParadas.do" id="paradas2">Volver atr&aacute;s
+                <br>
+                 <i class="fas fa-arrow-left"></i></a></div>
             </div>
 
         </body>

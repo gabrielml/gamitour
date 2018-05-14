@@ -65,20 +65,16 @@
 
 
             <div class="seccion">
-
                 <div class="cajamenu">
                     <a href="contenido/actividades/FormInsertarActividad.jsp">Insertar Actividad
-                                <br>
-                                <i class="fas fa-sort-amount-up"></i></a>
-
+                    <br>
+                    <i class="fas fa-sort-amount-up"></i></a>
                 </div>
                 <div class="cajamenu">
-                    <a href="../index.html">Volver al Men�
-                        <br>
-                        <i class="fas fa-undo"></i></a></div>
-
-
-
+                    <a href="../index.html">Volver al Men&uacute;
+                    <br>
+                    <i class="fas fa-undo"></i></a>
+                </div>
             </div>
 
 

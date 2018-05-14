@@ -21,11 +21,11 @@
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
-                        	<th>ID <i class="fas fa-sort"></th>
+                            <th>ID <i class="fas fa-sort"></th>
                             <th>NOMBRE <i class="fas fa-sort"></th>
-                            <th>CATEGORIA <i class="fas fa-sort"></th>
-                            <th>DURACION <i class="fas fa-sort"></th>
-                            <th>UBICACION <i class="fas fa-sort"></th>
+                            <th>CATEGOR&Iacute;A <i class="fas fa-sort"></th>
+                            <th>DURACI&Oacute;N <i class="fas fa-sort"></th>
+                            <th>UBICACI&Oacute;N <i class="fas fa-sort"></th>
                          </tr>
 	                </thead>
                     <tbody>
@@ -43,8 +43,8 @@
                                 <td>
                                     <a id="icono" href="contenido/itinerarios/ModificarItinerarios.jsp?iditinerario=${unItinerario.iditinerario}&nombre=${unItinerario.nombre}&categoria=${unItinerario.categoria}&duracion=${unItinerario.duracion}&ubicacion=${unItinerario.ubicacion}"><i class="far fa-edit"></i></a>
                                 </td>
-                                 <td>
-                                <a title="Ver paradas" id="icono" href="MostrarParadasItinerario.do?iditinerario=${unItinerario.iditinerario}&nombre=${unItinerario.nombre}"><i  class="fas fa-bus"></i>
+                                <td>
+                                    <a title="Ver paradas" id="icono" href="MostrarParadasItinerario.do?iditinerario=${unItinerario.iditinerario}&nombre=${unItinerario.nombre}"><i  class="fas fa-bus"></i>
 
                                 </a>
                                 </td>
@@ -60,7 +60,7 @@
                 <i class="fas fa-sort-amount-up"></i></a>
                 </div>
                 <div class="cajamenu">
-                    <a href="/Demo_Web/index.html">Volver al Menu
+                    <a href="../index.html">Volver al Men&uacute;
                 <br>
                 <i class="fas fa-undo"></i></a></div>
             </div>

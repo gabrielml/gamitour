@@ -104,11 +104,11 @@
                         <td><input type="text" name="nombreActividad"></td>
                     </tr>
                     <tr>
-                        <td>Fecha inicio (a�o-mes-dia) : </td>
+                        <td>Fecha inicio (a&ntilde;o-mes-dia) : </td>
                         <td><input type="text" name="fechaInicio"></td>
                     </tr>
                     <tr>
-                        <td>Fecha final (a�o-mes-dia) : </td>
+                        <td>Fecha final (a&ntilde;o-mes-dia) : </td>
                         <td><input type="text" name="fechaFinal"></td>
                     </tr>
                     <tr>
@@ -135,7 +135,7 @@
                     <div class="boton">
                         <input class="button" type="submit" value="Insertar">
                         <input class="button" type="reset" value="Limpiar">
-                        <a href="../index.html"><input class="button" type="button" value="Volver"></a>
+                        <a href="../../MostrarActividades.do" id="actividad2"><input class="button" type="button" value="Volver"></a>
 
                     </div>
 

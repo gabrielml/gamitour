@@ -21,13 +21,13 @@ pageEncoding="ISO-8859-1"%>
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
                         <tr>
-                        <th>ID <i class="fas fa-sort"></th>
+                            <th>ID <i class="fas fa-sort"></th>
                         <th>NOMBRE <i class="fas fa-sort"></th>
-                        <th>NUMERO PARADA <i class="fas fa-sort"></th>
-                        <th>UBICACION <i class="fas fa-sort"></th>
-                        <th>HISTORIA <i class="fas fa-sort"></th>
+                        <th>N&Uacute;MERO PARADA <i class="fas fa-sort"></th>
+                        <th>UBICACI&Oacute;N <i class="fas fa-sort"></th>
+                        <th>HISTOR&Iacute;A <i class="fas fa-sort"></th>
                         <th>ANECDOTARIO <i class="fas fa-sort"></th>
-                        <th>GASTRONOMIA <i class="fas fa-sort"></th>
+                        <th>GASTRONOM&Iacute;A <i class="fas fa-sort"></th>
                         <th>IMAGEN <i class="fas fa-sort"></th>
                        
                     </tr>
@@ -50,16 +50,16 @@ pageEncoding="ISO-8859-1"%>
                                 <td>
                                     <a id="icono" href="contenido/paradas/ModificarParadas.jsp?idParada=${unaParada.idparada}&nombre=${unaParada.nombre}&numeroParada=${unaParada.numeroParada}&ubicacion=${unaParada.ubicacion}&historia=${unaParada.historia}&anecdotario=${unaParada.anecdotario}&gastronomia=${unaParada.gastronomia}&imagen=${unaParada.imagen}&itinerario=${unaParada.itinerario}"><i class="far fa-edit"></i></a>
                                 </td>
-                                 <td>
-                            <a id="icono" title="Ver P.Deportivas" href="MostrarPDeportivasParada.do?idparada=${unaParada.idparada}&nombre=${unaParada.nombre}"><i class="fas fa-futbol"></i></a>
+                                <td>
+                                    <a id="icono" title="Ver P.Deportivas" href="MostrarPDeportivasParada.do?idparada=${unaParada.idparada}&nombre=${unaParada.nombre}"><i class="fas fa-futbol"></i></a>
                                 </td>
-                                 <td>
-                            <a id="icono" title="Ver P.Culturales" href="MostrarPCulturalesParada.do?idparada=${unaParada.idparada}&nombre=${unaParada.nombre}"><i class="fas fa-book"></i></a>
+                                <td>
+                                    <a id="icono" title="Ver P.Culturales" href="MostrarPCulturalesParada.do?idparada=${unaParada.idparada}&nombre=${unaParada.nombre}"><i class="fas fa-book"></i></a>
                                 </td>
-                              
+
                         </tr>
                         </c:forEach>
-                         <input type="hidden" name="nombre" value="${nombre}"/>
+                        <input type="hidden" name="nombre" value="${nombre}" />
                         </tbody>
                 </table>
             </div>
@@ -70,16 +70,16 @@ pageEncoding="ISO-8859-1"%>
                 <i class="fas fa-sort-amount-up"></i></a>
                 </div>
                 <div class="cajamenu">
-                    <a href="/Demo_Web/index.html">Volver al Menu
+                    <a href="../index.html">Volver al Men&uacute;
                 <br>
                  <i class="fas fa-undo"></i></a></div>
-                
-                <!--  
-                 <div class="cajamenu">
-                    <a href="" onclick="history.back()">Volver atrás
+
+
+                <div class="cajamenu">
+                    <a href="../../MostrarItinerarios.do" id="itinerarios2">Volver atr&aacute;s
                 <br>
                  <i class="fas fa-arrow-left"></i></a></div>
-                -->
+
             </div>
 
         </body>

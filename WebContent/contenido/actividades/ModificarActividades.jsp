@@ -86,7 +86,7 @@
     </head>
 
     <body>
-        <p class="titulo">GAMITOUR</p>
+        <p class="titulo">GAMIASTUR</p>
 
 
         <div class="cabecera">
@@ -141,7 +141,7 @@
                     <div class="boton">
                         <input class="button" type="submit" value="Modificar">
                         <input class="button" type="reset" value="Limpiar">
-                        <a href="../index.html"><input class="button" type="button" value="Volver"></a>
+                        <a href="../../MostrarActividades.do" id="actividad2"><input class="button" type="button" value="Volver"></a>
 
                     </div>
 

@@ -26,14 +26,14 @@
                 <table style="margin:  auto;" id="tabla" class="tablesorter">
                     <thead>
 
-            <tr>
-            <th>ID <i class="fas fa-sort"></th>
+                        <tr>
+                            <th>ID <i class="fas fa-sort"></th>
             <th>NOMBRE <i class="fas fa-sort"></th>
 			<th>FECHA DE INICIO <i class="fas fa-sort"></th>
 			<th>FECHA DE FIN <i class="fas fa-sort"></th>
-			<th>EXPLICACION <i class="fas fa-sort"></th>
+			<th>EXPLICACI&Oacute;N <i class="fas fa-sort"></th>
 			<th>PUNTOS <i class="fas fa-sort"></th>
-			<th>NUMERO DE PARADA <i class="fas fa-sort"></th>
+			<th>N&Uacute;MERO DE PARADA <i class="fas fa-sort"></th>
 			<th>PDF <i class="fas fa-sort"></th>
 			<th>VIDEO <i class="fas fa-sort"></th>
 
@@ -52,10 +52,11 @@
 		<td>${unaPDeportiva.parada.numeroParada}</td>
 		<td>${unaPDeportiva.pdf}</td>
 		<td>${unaPDeportiva.video}</td>
-		<td><a id="icono" href="BorrarPDeportiva.do?nombrePDeportivaBorrar=${unaPDeportiva.nombre}"><i class="fas fa-trash-alt"></i></a></td>
-        <td>
-            <a id="icono" href="contenido/pDeportivas/ModificarPDeportiva.jsp?idpruebadeportiva=${unaPDeportiva.idpruebadeportiva}&nombre=${unaPDeportiva.nombre}&fechainicio=${unaPDeportiva.fechainicio}&fechafin=${unaPDeportiva.fechafin}&explicacion=${unaPDeportiva.explicacion}&puntos=${unaPDeportiva.puntos}&parada=${unaPDeportiva.parada.numeroParada}&pdf=${unaPDeportiva.pdf}&video=${unaPDeportiva.video}"><i class="far fa-edit"></i></a>
-        </td>
+		<td><a id="icono" href="BorrarPDeportiva.do?nombrePDeportivaBorrar=${unaPDeportiva.nombre}"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                                <td>
+                                    <a id="icono" href="contenido/pDeportivas/ModificarPDeportiva.jsp?idpruebadeportiva=${unaPDeportiva.idpruebadeportiva}&nombre=${unaPDeportiva.nombre}&fechainicio=${unaPDeportiva.fechainicio}&fechafin=${unaPDeportiva.fechafin}&explicacion=${unaPDeportiva.explicacion}&puntos=${unaPDeportiva.puntos}&parada=${unaPDeportiva.parada.numeroParada}&pdf=${unaPDeportiva.pdf}&video=${unaPDeportiva.video}"><i class="far fa-edit"></i></a>
+                                </td>
                         </tr>
                         </c:forEach>
                         </tbody>
@@ -72,7 +73,7 @@
 
                 </div>
                 <div class="cajamenu">
-                    <a href="/Demo_Web/index.html">Volver al Menu
+                    <a href="../index.html">Volver al Men&uacute;
                         <br>
                         <i class="fas fa-undo"></i></a></div>
 
